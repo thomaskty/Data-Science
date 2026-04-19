@@ -1,0 +1,40 @@
+{
+  "doc-7b8b1c8f6400bcdb16a3488c52022fb4": {
+    "status": "processed",
+    "chunks_count": 21,
+    "chunks_list": [
+      "chunk-47439f39943c500ebbd82430fcd5a47f",
+      "chunk-2342fe853447858443171ce27b6bf554",
+      "chunk-fb3b2a9642d9402ce461122c98a81fd6",
+      "chunk-50ef79f5820dd68dd3803e9eecf98e80",
+      "chunk-36eedc88c32f26a4209663bcf9de5e48",
+      "chunk-ea853774b3241b5f39f26edf475d4bd5",
+      "chunk-b05cce72ca9f7c1081afa465d0eb6116",
+      "chunk-8a30975c53ad9871d2711abf552b151f",
+      "chunk-88ebe14996977f568b531a51ff2b02e2",
+      "chunk-92698bb9a611d4820a4578e37e74e670",
+      "chunk-2d23b106580d44e93ef9110173f0cfaf",
+      "chunk-1b0413a81536bbb879f772d32b8c0dfe",
+      "chunk-11b9991810e9963c09e4017983a04dc3",
+      "chunk-3dd00be716f65d39ed28040e8449c044",
+      "chunk-3fde5aaf8f821b4be0b48eb6bfb98337",
+      "chunk-c74c755aa200873b54b093c4aef3485e",
+      "chunk-bed5ba3a860481b1c29ee139ebb94960",
+      "chunk-0ed9b2ed0a4bc6dedef04c5c1a224400",
+      "chunk-260174f5a5690a7e51bdf14e210da8b4",
+      "chunk-76f41ba1f43d29b4684e8f0113c3efae",
+      "chunk-fb95b7d9ca41e3520dd06a9228985544"
+    ],
+    "content_summary": "RAG-ANYTHING: ALL-IN-ONE RAG FRAMEWORK\n\nZirui Guo, Xubin Ren, Lingrui Xu, Jiahao Zhang, Chao Huang∗ The University of Hong Kong zrguo101@hku.hk xubinrencs@gmail.com chaohuang75@gmail.com \n\nABSTRACT \n\nRetrieval-Augmented Generation (RAG) has emerged a...",
+    "content_length": 43990,
+    "created_at": "2025-10-19T23:53:52.999892+00:00",
+    "updated_at": "2025-10-20T05:28:02+00:00",
+    "file_path": "research_paper.pdf",
+    "track_id": "insert_20251020_052352_812881ad",
+    "metadata": {
+      "processing_start_time": 1760918033,
+      "processing_end_time": 1760918101
+    },
+    "multimodal_processed": true
+  }
+}

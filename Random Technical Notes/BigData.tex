@@ -1,0 +1,1262 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{multicol}
+\setlength{\columnsep}{12pt}
+\setlength{\parskip}{2pt}
+\setlength{\columnsep}{15pt}
+\pgfplotsset{compat=1.18}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath, amsfonts}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+\setlength{\columnseprule}{0.3pt}
+\renewcommand{\columnseprulecolor}{\color{gray!50}}
+
+\setlength{\parskip}{2.5pt}
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{14pt}
+\setlist[itemize]{leftmargin=1.8em, labelwidth=0.8em, labelsep=0.35em, itemsep=2pt, topsep=2pt, parsep=0pt, partopsep=0pt}
+\setlist[enumerate]{leftmargin=2.0em, labelsep=0.4em, itemsep=2pt, topsep=2pt, parsep=0pt, partopsep=0pt}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+\setcounter{secnumdepth}{3}
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{softgreen}{HTML}{E6F4EA}
+\definecolor{softyellow}{HTML}{FFF6D6}
+\definecolor{softblue}{HTML}{E8F1FA}
+\titleformat{\section}{\LARGE\color{accent}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\Large\color{accent}}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\large\color{accent}}{\thesubsubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+\titlespacing*{\subsection}{0pt}{7pt}{3pt}
+\titlespacing*{\subsubsection}{0pt}{6pt}{2pt}
+\definecolor{tocblue}{HTML}{068fc9}
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\color{tocblue}}
+\renewcommand{\cftsubsecfont}{\color{tocblue}}
+\renewcommand{\cftsubsubsecfont}{\color{tocblue}}
+\renewcommand{\cftsecpagefont}{\color{tocblue}}
+\renewcommand{\cftsubsecpagefont}{\color{tocblue}}
+\renewcommand{\cftsubsubsecpagefont}{\color{tocblue}}
+\setlength{\cftbeforesecskip}{0pt}
+\hypersetup{linkcolor=tocblue}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Random Technical Notes}
+\fancyhead[R]{\textbf{}}
+\fancyfoot[L]{\hyperref[toc]{Table of Contents}}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhead[L]{Random Technical Notes}
+	\fancyhead[R]{\textbf{}}
+	\fancyfoot[L]{\hyperref[toc]{Table of Contents}}
+	\fancyfoot[R]{\thepage}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+}
+\sethlcolor{yellow!20}
+\newcommand{\highlighttextblue}[1]{\textcolor{blue!60!black}{#1}}
+\newcommand{\highlighttextgreen}[1]{\textcolor{green!60!black}{#1}}
+\newcommand{\highlighttextyellow}[1]{\hl{#1}}
+\newcommand{\Set}[1]{\left\{#1\right\}}
+\usepackage{listings}
+\definecolor{ghBackground}{HTML}{F6F8FA}
+\definecolor{ghKeyword}{HTML}{D73A49}
+\definecolor{ghString}{HTML}{032F62}
+\definecolor{ghComment}{HTML}{6A737D}
+\definecolor{ghIdentifier}{HTML}{24292E}
+\definecolor{ghFrame}{HTML}{E1E4E8}
+\definecolor{ghFunction}{HTML}{005CC5}
+\lstdefinestyle{github}{
+	language=Python,
+	backgroundcolor=\color{ghBackground},
+	basicstyle=\ttfamily\small\color{ghIdentifier},
+	keywordstyle=\color{ghKeyword}\bfseries,
+	stringstyle=\color{ghString},
+	commentstyle=\color{ghComment},
+	emphstyle=\color{ghFunction}\bfseries,
+	showstringspaces=false,
+	frame=single,
+	rulecolor=\color{ghFrame},
+	breaklines=true,
+	tabsize=4
+}
+\lstset{
+	language=Python,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	stringstyle=\color{orange},
+	showstringspaces=false,
+	frame=single,
+	breaklines=true
+}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=tocblue,
+	citecolor=tocblue,
+	urlcolor=tocblue
+}
+\begin{document}
+	\begin{titlepage}
+		\vspace*{0.25\textheight}
+		{\LARGE \textcolor{accent}{Random Technical Notes}}\par
+		\author{Thomaskutty Reji}
+		\date{}
+	\end{titlepage}
+	\phantomsection
+	\label{toc}
+	\tableofcontents
+	\newpage
+	
+
+	\section{Spark}
+	\subsection{Core Spark Fundamentals}
+	
+	\textbf{MapReduce}
+	\begin{itemize}
+	    \item Distributed data processing model for large-scale datasets.
+	    \item Consists of:
+	    \begin{itemize}
+	        \item \textbf{Map}: Transforms input data into key-value pairs.
+	        \item \textbf{Shuffle \& Sort}: Groups values by key across nodes.
+	        \item \textbf{Reduce}: Aggregates grouped data.
+	    \end{itemize}
+	    \item Example: Word Count
+	    \begin{itemize}
+	        \item Map: (word, 1)
+	        \item Reduce: (word, total count)
+	    \end{itemize}
+	    \item Conceptual mapping:
+	    \begin{itemize}
+	        \item Pandas \texttt{groupby()} $\rightarrow$ Reduce
+	        \item Hive SQL aggregations $\rightarrow$ MapReduce paradigm
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Limitations of MapReduce}
+	\begin{itemize}
+	    \item Disk-based processing (high I/O overhead)
+	    \item Inefficient for iterative workloads (e.g., ML algorithms)
+	    \item High latency (batch-oriented)
+	    \item Rigid execution model (Map $\rightarrow$ Reduce)
+	    \item Complex to implement at low level
+	\end{itemize}
+	
+	\textbf{Apache Spark}
+	\begin{itemize}
+	    \item Distributed data processing engine designed for speed and flexibility.
+	    \item Addresses MapReduce limitations.
+	    \item Key advantages:
+	    \begin{itemize}
+	        \item In-memory computation
+	        \item DAG (Directed Acyclic Graph) execution
+	        \item Lazy evaluation
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Why Spark is Faster}
+	\begin{itemize}
+	    \item Reduces disk I/O via in-memory processing
+	    \item Optimizes execution using DAG
+	    \item Delays execution to optimize full pipeline
+	\end{itemize}
+	
+	\textbf{Core Components}
+	\begin{itemize}
+	    \item \textbf{RDD (Resilient Distributed Dataset)}
+	    \begin{itemize}
+	        \item Immutable, distributed collection
+	        \item Low-level abstraction
+	        \item Supports transformations and actions
+	    \end{itemize}
+	    
+	    \item \textbf{DataFrame}
+	    \begin{itemize}
+	        \item Structured data with named columns
+	        \item Optimized and high-level API
+	        \item Similar to Pandas DataFrame
+	    \end{itemize}
+	    
+	    \item \textbf{Spark SQL}
+	    \begin{itemize}
+	        \item SQL interface for querying structured data
+	        \item Similar to Hive SQL
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Transformations vs Actions}
+	\begin{itemize}
+	    \item \textbf{Transformations} (lazy):
+	    \begin{itemize}
+	        \item Define computation
+	        \item Examples: \texttt{filter()}, \texttt{map()}, \texttt{groupBy()}
+	    \end{itemize}
+	    
+	    \item \textbf{Actions}:
+	    \begin{itemize}
+	        \item Trigger execution
+	        \item Examples: \texttt{count()}, \texttt{collect()}, \texttt{show()}
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Lazy Evaluation}
+	\begin{itemize}
+	    \item Transformations are not executed immediately.
+	    \item Execution occurs only when an action is called.
+	    \item Enables:
+	    \begin{itemize}
+	        \item Optimization via DAG
+	        \item Efficient execution planning
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Execution Model}
+	\begin{itemize}
+	    \item Spark builds a DAG of transformations.
+	    \item Executes the DAG only when an action is invoked.
+	\end{itemize}
+	
+	\textbf{Skill Mapping}
+	\begin{itemize}
+	    \item Pandas DataFrame $\leftrightarrow$ Spark DataFrame
+	    \item Pandas \texttt{groupby()} $\leftrightarrow$ Spark \texttt{groupBy()}
+	    \item Hive SQL $\leftrightarrow$ Spark SQL
+	\end{itemize}
+
+	\subsection{Spark Architecture}
+	
+	\textbf{Overview}
+	\begin{itemize}
+	    \item Spark follows a master-worker architecture.
+	    \item Consists of three main components:
+	    \begin{itemize}
+	        \item Driver
+	        \item Executors
+	        \item Cluster Manager
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Driver}
+	\begin{itemize}
+	    \item The central coordinator of a Spark application.
+	    \item Responsible for:
+	    \begin{itemize}
+	        \item Defining transformations and actions
+	        \item Building the Directed Acyclic Graph (DAG)
+	        \item Scheduling tasks
+	        \item Communicating with executors
+	    \end{itemize}
+	    \item Does not perform actual data processing.
+	\end{itemize}
+	
+	\textbf{Executors}
+	\begin{itemize}
+	    \item Worker nodes responsible for executing tasks.
+	    \item Responsibilities:
+	    \begin{itemize}
+	        \item Perform computations on distributed data
+	        \item Store intermediate data in memory
+	        \item Return results to the driver
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Cluster Manager}
+	\begin{itemize}
+	    \item Responsible for resource allocation across the cluster.
+	    \item Manages CPU and memory resources.
+	    \item Examples:
+	    \begin{itemize}
+	        \item YARN
+	        \item Standalone
+	        \item Kubernetes
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Execution Flow}
+	\begin{itemize}
+	    \item Driver initiates the Spark application.
+	    \item Builds a DAG of transformations.
+	    \item Requests resources from the cluster manager.
+	    \item Executors are launched on worker nodes.
+	    \item Tasks are distributed to executors.
+	    \item Executors process data and return results to the driver.
+	\end{itemize}
+	
+	\textbf{Key Points}
+	\begin{itemize}
+	    \item Driver = coordination and planning
+	    \item Executors = data processing
+	    \item Cluster Manager = resource management
+	\end{itemize}
+	
+	
+	\subsection{Sample Questions}
+	
+	\textbf{Q1: What is the difference between transformation and action in Spark?} \\
+	Transformations are operations like \texttt{map}, \texttt{filter}, and \texttt{groupBy} that define computation but are not executed immediately (lazy). Actions, such as \texttt{count} and \texttt{show}, trigger the execution of these transformations and return results. Spark builds a DAG of transformations and executes them only when an action is called.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q2: Why is Spark faster than MapReduce?} \\
+	Spark is faster because it uses in-memory computation, reducing disk I/O. It also uses a DAG-based execution model instead of rigid MapReduce stages, allowing better optimization. Additionally, lazy evaluation enables Spark to optimize the full computation before execution.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q3: What is the role of the Driver in Spark?} \\
+	The Driver is the central coordinator of a Spark application. It defines the computation logic, builds the DAG, schedules tasks, and communicates with executors to execute those tasks.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q4: What is the difference between RDD and DataFrame?} \\
+	RDD is a low-level distributed data structure that provides fine-grained control but requires manual optimization. It is immutable, and each transformation creates a new RDD. DataFrames are higher-level abstractions with a tabular structure and built-in optimizations (Catalyst optimizer), making them more efficient and easier to use.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q5: What is lazy evaluation in Spark and why is it important?} \\
+	Lazy evaluation means transformations are not executed immediately. Spark builds a DAG of operations and executes them only when an action is triggered. This allows optimization of the entire computation and avoids unnecessary processing.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q6: What is the difference between Spark and Hadoop?} \\
+	Spark is a distributed data processing engine, while Hadoop is a complete ecosystem that includes storage (HDFS), resource management (YARN), and processing (MapReduce). Spark is faster due to in-memory computation and can run on top of Hadoop.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q7: How is Spark SQL similar to Hive, and how does Hive experience help?} \\
+	Both Spark SQL and Hive allow querying structured data using SQL. Experience with Hive helps in Spark SQL since the syntax and concepts like joins, aggregations, and filtering are similar. Spark executes these queries faster using in-memory processing.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q8: When would you use Spark instead of Pandas?} \\
+	Pandas is suitable for small to medium datasets that fit in a single machine’s memory. Spark is used for large-scale data processing that requires distributed computation across multiple machines. Spark provides scalability, while Pandas is limited by single-machine memory.
+	
+	
+	\subsection{One-Liners}
+
+	\begin{itemize}
+	    \item Spark is a distributed data processing engine; Hadoop is a full big data ecosystem.
+	    \item Spark is faster than MapReduce due to in-memory computation.
+	    \item MapReduce follows a rigid pipeline; Spark uses a flexible DAG execution model.
+	    \item Transformations are lazy; actions trigger execution.
+	    \item Spark builds a DAG and executes it only when an action is called.
+	    \item RDD is low-level; DataFrame is optimized and high-level.
+	    \item Spark SQL is similar to Hive SQL but faster.
+	    \item Spark can run on Hadoop using HDFS for storage and YARN for resource management.
+	    \item Pandas works on a single machine; Spark works on distributed systems.
+	    \item Lazy evaluation allows Spark to optimize the full execution plan before running.
+	\end{itemize}
+	
+	
+	\subsection{PySpark Workflow Overview}
+	
+	\textbf{Big Data Storage and Ecosystem}
+	\begin{itemize}
+	    \item Data is typically stored in distributed systems such as HDFS, cloud storage (S3), or data lakes.
+	    \item Spark efficiently reads from these sources in a distributed manner.
+	\end{itemize}
+	
+	\textbf{PySpark as Python Interface}
+	\begin{itemize}
+	    \item PySpark is the Python API for Spark.
+	    \item Python commands are translated into JVM operations under the hood.
+	    \item Spark handles partitions, DAGs, shuffling, and parallel execution automatically.
+	\end{itemize}
+	
+	\textbf{Data Processing and Analysis}
+	\begin{itemize}
+	    \item Transformations (e.g., \texttt{map}, \texttt{filter}, \texttt{groupBy}, \texttt{join}) define computation.
+	    \item Actions (e.g., \texttt{show()}, \texttt{collect()}, \texttt{count()}) trigger execution.
+	    \item Spark optimizes execution via DAGs, in-memory caching, and parallel processing.
+	\end{itemize}
+	
+	\textbf{Comparison to Pandas}
+	\begin{itemize}
+	    \item Pandas works on a single machine with in-memory data.
+	    \item PySpark works on distributed systems for datasets too large to fit in memory.
+	    \item Both use DataFrame abstractions and SQL-like operations.
+	\end{itemize}
+	
+	\textbf{Workflow Summary}
+	\begin{enumerate}
+	    \item Load distributed data using PySpark.
+	    \item Apply transformations (lazy operations).
+	    \item Trigger actions to compute results.
+	    \item Optionally store results back to distributed storage or databases.
+	\end{enumerate}
+	
+	\textbf{Key Point}
+	\begin{itemize}
+	    \item PySpark allows data scientists to focus on analysis logic while Spark handles all distributed processing complexities.
+	\end{itemize}
+	
+	
+	
+	\subsection{Partition \& Parallelism}
+	
+	\textbf{Partition}
+	\begin{itemize}
+	    \item A partition is a chunk of data distributed across executors in a Spark cluster.
+	    \item Each partition is processed independently.
+	    \item Partitioning enables distributed and parallel computation.
+	\end{itemize}
+	
+	\textbf{Parallelism}
+	\begin{itemize}
+	    \item Parallelism in Spark is achieved through partitioning.
+	    \item Each partition corresponds to one task.
+	    \item More partitions $\rightarrow$ higher parallelism (limited by available cores).
+	\end{itemize}
+	
+	\textbf{Data Reading and Partitioning}
+	\begin{itemize}
+	    \item Spark automatically partitions data during data ingestion.
+	    \item Partitioning depends on:
+	    \begin{itemize}
+	        \item File size
+	        \item HDFS block size (e.g., 128MB)
+	        \item Cluster configuration
+	    \end{itemize}
+	    \item Partitions are distributed across executors for parallel processing.
+	\end{itemize}
+	
+	\textbf{Default Behavior}
+	\begin{itemize}
+	    \item Partitioning is handled automatically by Spark.
+	    \item No manual configuration is required initially.
+	    \item Default partitioning is usually sufficient for moderate workloads.
+	\end{itemize}
+	
+	\textbf{Why Partitioning Matters}
+	\begin{itemize}
+	    \item Determines how well data is distributed across the cluster.
+	    \item Directly impacts performance and resource utilization.
+	\end{itemize}
+	
+	\textbf{Common Issues}
+	\begin{itemize}
+	    \item \textbf{Too few partitions}:
+	    \begin{itemize}
+	        \item Poor parallelism
+	        \item Underutilization of cluster resources
+	    \end{itemize}
+	    
+	    \item \textbf{Too many partitions}:
+	    \begin{itemize}
+	        \item Increased scheduling overhead
+	        \item Many small tasks
+	    \end{itemize}
+	    
+	    \item \textbf{Data Skew}:
+	    \begin{itemize}
+	        \item Uneven distribution of data across partitions
+	        \item One partition becomes a bottleneck
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Repartition vs Coalesce}
+	\begin{itemize}
+	    \item \texttt{repartition()}:
+	    \begin{itemize}
+	        \item Increases or redistributes partitions
+	        \item Involves full shuffle
+	    \end{itemize}
+	    
+	    \item \texttt{coalesce()}:
+	    \begin{itemize}
+	        \item Reduces number of partitions
+	        \item Minimizes data movement (no full shuffle)
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Default Partition Configurations}
+	\begin{itemize}
+	    \item \texttt{spark.default.parallelism}:
+	    \begin{itemize}
+	        \item Based on number of available CPU cores
+	        \item Controls default partitions for RDD operations
+	    \end{itemize}
+	    
+	    \item \texttt{spark.sql.shuffle.partitions}:
+	    \begin{itemize}
+	        \item Default = 200
+	        \item Controls partitions during shuffle operations (joins, aggregations)
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Why Manual Tuning is Needed}
+	\begin{itemize}
+	    \item Spark does not fully understand:
+	    \begin{itemize}
+	        \item Data distribution (data skew)
+	        \item Workload characteristics
+	        \item Optimal resource utilization
+	    \end{itemize}
+	    \item Manual tuning improves:
+	    \begin{itemize}
+	        \item Parallelism
+	        \item Load balancing
+	        \item Overall performance
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Key Takeaways}
+	\begin{itemize}
+	    \item Partition = unit of parallelism
+	    \item Spark handles partitioning automatically by default
+	    \item Poor partitioning leads to performance issues
+	    \item Repartition and coalesce are used for optimization
+	\end{itemize}
+	
+	
+	\subsection{Shuffle \& Joins}
+	
+	\textbf{Shuffle}
+	\begin{itemize}
+	    \item Shuffle is the process of redistributing data across partitions based on a key.
+	    \item It occurs when data with the same key is spread across multiple partitions and needs to be grouped together.
+	    \item Common operations that trigger shuffle:
+	    \begin{itemize}
+	        \item \texttt{groupBy()}
+	        \item \texttt{join()}
+	        \item \texttt{reduceByKey()}
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Why Shuffle is Needed}
+	\begin{itemize}
+	    \item Initial partitioning is based on data source (file splits), not keys.
+	    \item Data with the same key may exist in different partitions.
+	    \item Shuffle brings related data together for correct computation.
+	\end{itemize}
+	
+	\textbf{Cost of Shuffle}
+	\begin{itemize}
+	    \item Involves network I/O (data movement across nodes)
+	    \item May involve disk I/O
+	    \item Considered the most expensive operation in Spark
+	\end{itemize}
+	
+	\textbf{Join in Spark}
+	\begin{itemize}
+	    \item Join combines two datasets based on a common key.
+	    \item It is a \textbf{transformation} and specifically a \textbf{wide transformation}.
+	    \item Join requires shuffle in most cases.
+	\end{itemize}
+	
+	\textbf{Why Join Requires Shuffle}
+	\begin{itemize}
+	    \item Data from both datasets may be distributed across different partitions.
+	    \item Records with the same key must be brought together.
+	    \item Shuffle redistributes data across executors based on the join key.
+	\end{itemize}
+	
+	\textbf{Execution Flow of Join}
+	\begin{itemize}
+	    \item Data is initially partitioned and distributed across executors.
+	    \item Spark identifies the join key.
+	    \item Shuffle redistributes data so that same keys are co-located.
+	    \item Join computation happens locally within each partition.
+	\end{itemize}
+	
+	\textbf{Data Skew}
+	\begin{itemize}
+	    \item Occurs when some keys have significantly more data than others.
+	    \item Leads to uneven partition sizes.
+	    \item Causes performance bottlenecks as one executor may take longer to process.
+	\end{itemize}
+	
+	\textbf{Broadcast Join}
+	\begin{itemize}
+	    \item Used when one dataset is small.
+	    \item Small dataset is sent to all executors.
+	    \item Avoids shuffle on large dataset.
+	\end{itemize}
+	
+	\textbf{Example}
+	\begin{itemize}
+	    \item Before shuffle:
+	    \begin{itemize}
+	        \item Same keys distributed across partitions
+	    \end{itemize}
+	    \item After shuffle:
+	    \begin{itemize}
+	        \item Same keys grouped in the same partition
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Key Takeaways}
+	\begin{itemize}
+	    \item Shuffle = regrouping distributed data by key
+	    \item Joins are expensive due to shuffle
+	    \item Join is a wide transformation
+	    \item Broadcast join helps optimize small-large joins
+	\end{itemize}
+	
+
+	\subsection{Caching / Persistence}
+	
+	\textbf{Problem: Recomputation}
+	\begin{itemize}
+	    \item Spark uses lazy evaluation.
+	    \item Transformations are not executed until an action is triggered.
+	    \item By default, Spark does not store intermediate results.
+	    \item Multiple actions on the same dataset can trigger recomputation of the entire pipeline.
+	\end{itemize}
+	
+	\textbf{Caching}
+	\begin{itemize}
+	    \item Caching stores intermediate results in memory.
+	    \item Prevents recomputation for repeated operations on the same dataset.
+	    \item Improves performance for iterative and multi-step workflows.
+	\end{itemize}
+	
+	\textbf{Usage}
+	\begin{itemize}
+	    \item Apply caching on intermediate DataFrames:
+	\begin{verbatim}
+	df_filtered = df.filter(...)
+	df_filtered.cache()
+	\end{verbatim}
+	    \item First action computes and caches the data.
+	    \item Subsequent actions reuse cached data.
+	\end{itemize}
+	
+	\textbf{Persist vs Cache}
+	\begin{itemize}
+	    \item \texttt{cache()}:
+	    \begin{itemize}
+	        \item Default caching mechanism
+	        \item Equivalent to \texttt{persist(MEMORY\_ONLY)}
+	    \end{itemize}
+	    
+	    \item \texttt{persist()}:
+	    \begin{itemize}
+	        \item Allows control over storage level
+	        \item Options include:
+	        \begin{itemize}
+	            \item MEMORY\_ONLY
+	            \item MEMORY\_AND\_DISK
+	        \end{itemize}
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{When to Use Caching}
+	\begin{itemize}
+	    \item When the same dataset is used multiple times
+	    \item In iterative algorithms
+	    \item When multiple actions are performed on the same data
+	\end{itemize}
+	
+	\textbf{When Not to Use}
+	\begin{itemize}
+	    \item When dataset is used only once
+	    \item When memory resources are limited
+	\end{itemize}
+	
+	\textbf{Connection to DAG}
+	\begin{itemize}
+	    \item Without caching:
+	    \begin{itemize}
+	        \item Full DAG is recomputed for each action
+	    \end{itemize}
+	    \item With caching:
+	    \begin{itemize}
+	        \item Intermediate results are stored
+	        \item DAG execution is shortened
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Key Takeaways}
+	\begin{itemize}
+	    \item Spark recomputes transformations by default
+	    \item Caching avoids repeated computation
+	    \item Improves performance for repeated operations
+	    \item \texttt{cache()} is simple; \texttt{persist()} provides more control
+	\end{itemize}
+	
+	\subsection{Mock Interview Questions}
+	
+	\textbf{Q1: What is the difference between narrow and wide transformations?} \\
+	\textbf{A1:} Narrow transformations (e.g., \texttt{map}, \texttt{filter}) do not require data movement across partitions; each output partition depends on a single input partition. Wide transformations (e.g., \texttt{groupBy}, \texttt{join}) require shuffle because output partitions depend on multiple input partitions.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q2: Why are joins expensive in Spark?} \\
+	\textbf{A2:} Joins are wide transformations that often require shuffle, redistributing data across executors so that records with the same key are co-located. This involves network I/O, possible disk I/O, and repartitioning, which makes joins expensive.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q3: What is data skew and how does it affect performance?} \\
+	\textbf{A3:} Data skew occurs when some keys have significantly more data than others, causing uneven partition sizes. This leads to certain executors taking much longer to process, slowing down the overall job.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q4: When would you use \texttt{repartition()} vs \texttt{coalesce()}?} \\
+	\textbf{A4:} \texttt{repartition()} reshuffles data and increases/decreases partitions (costly but balanced). \texttt{coalesce()} reduces partitions without shuffle (efficient for decreasing partition count).
+	
+	\vspace{0.5em}
+	
+	\textbf{Q5: What happens if you don’t use caching in an iterative workflow?} \\
+	\textbf{A5:} Spark recomputes all transformations from the source for each action, resulting in unnecessary computation and slower performance.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q6: How does Spark achieve parallelism?} \\
+	\textbf{A6:} Spark divides data into partitions and executes tasks on multiple executors in parallel. Each partition is processed independently, enabling distributed parallel computation.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q7: What is shuffle and when does it occur?} \\
+	\textbf{A7:} Shuffle is the redistribution of data across partitions to group records by key. It occurs during wide transformations like \texttt{groupBy}, \texttt{reduceByKey}, and \texttt{join}.
+	
+	\vspace{0.5em}
+	
+	\textbf{Q8: You have a Spark job that is running very slow after a \texttt{groupBy}. What could be the reasons?} \\
+	\textbf{A8:} Possible reasons include:
+	\begin{itemize}
+	    \item Large shuffle causing network and disk I/O overhead
+	    \item Data skew leading to uneven partition sizes
+	    \item Lack of caching if intermediate results are reused
+	    \item Too few or too many partitions
+	\end{itemize}
+	
+	\subsection{Implemenation : Pyspark Sample Code}
+		\begin{lstlisting}[style=github]
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, avg, count, sum as _sum
+
+# Step 1: Initialize Spark
+spark = SparkSession.builder.appName("SalesAnalysis").getOrCreate()
+
+# Step 2: Read data
+sales = spark.read.csv("sales_data.csv", header=True, inferSchema=True)
+customers = spark.read.csv("customers.csv", header=True, inferSchema=True)
+
+# Step 3: Cache frequently used dataset
+sales.cache()
+
+# Step 4: Transformations
+high_value_sales = sales.filter(col("amount") > 1000)
+high_value_sales = high_value_sales.withColumn("amount_usd", col("amount") * 0.013)
+
+# Step 5: Aggregation (wide transformation triggers shuffle)
+avg_sales_by_region = high_value_sales.groupBy("region").agg(
+	count("*").alias("num_sales"),
+	avg("amount_usd").alias("avg_amount_usd"),
+	_sum("amount_usd").alias("total_sales_usd")
+)
+
+# Step 6: Join with another dataset
+sales_with_customer_info = avg_sales_by_region.join(
+	customers,
+	on="region",
+	how="left"
+)
+
+# Step 7: Actions
+print("Total number of regions:", avg_sales_by_region.count())  # Action: count
+
+print("Top 5 rows of average sales by region:")
+avg_sales_by_region.show(5)  # Action: show
+
+sample_data = avg_sales_by_region.take(3)  # Action: take
+print("Sample data:", sample_data)
+
+stats = high_value_sales.describe("amount_usd").collect()  # Action: collect
+print("Amount USD stats:", stats)
+
+# Step 8: Optional repartitioning
+sales = sales.repartition(8)
+
+# Step 9: Stop Spark
+spark.stop()
+		\end{lstlisting}
+
+	
+	
+	\subsection{Hadoop Overview}
+	
+	\textbf{Definition:} Hadoop is an open-source ecosystem for distributed storage and batch processing of large datasets. It is designed for high-volume, disk-based processing.
+	
+	\textbf{Core Components:}
+	\begin{itemize}
+	    \item \textbf{HDFS (Hadoop Distributed File System):} Stores data in distributed, fault-tolerant blocks with replication across nodes.
+	    \item \textbf{YARN (Yet Another Resource Negotiator):} Manages cluster resources (CPU, memory) and schedules jobs.
+	    \item \textbf{MapReduce:} Batch processing framework.
+	    \begin{itemize}
+	        \item \textbf{Map:} Transforms input data into key-value pairs.
+	        \item \textbf{Reduce:} Aggregates or groups results.
+	    \end{itemize}
+	\end{itemize}
+	
+	\textbf{Optional Ecosystem Tools:} Hive, Pig, HBase, Sqoop, Flume, Kafka.
+	
+	\textbf{Key Points:}
+	\begin{itemize}
+	    \item Hadoop is \textbf{disk-based}: intermediate results are written to disk at every stage.
+	    \item Provides high \textbf{fault tolerance} via replication.
+	    \item Best suited for \textbf{batch processing} of massive datasets.
+	    \item Slower for iterative or real-time computations compared to in-memory frameworks like Spark.
+	\end{itemize}
+	
+	\textbf{Comparison with Spark:} 
+	\begin{itemize}
+	    \item Hadoop writes intermediate results to disk; Spark uses in-memory computation for faster processing.
+	    \item Hadoop is rigid (Map $\rightarrow$ Reduce); Spark uses a DAG and lazy evaluation for flexible, optimized execution.
+	\end{itemize}
+	
+	\newpage 
+	\section{Case Studies}
+	
+	\subsection{Reducing Early-Stage Credit Card Churn (UK Credit Card Issuer)}
+	
+	\subsubsection{Problem Definition}
+	
+	A UK-based credit card issuer is experiencing high customer churn within the first 12 months of card issuance.
+	
+	\textbf{Business Objectives:}
+	\begin{itemize}
+	    \item Reduce early-life churn (0--12 months)
+	    \item Improve customer engagement and customer lifetime value (CLV)
+	\end{itemize}
+	
+	\textbf{Key Success Metrics:}
+	\begin{itemize}
+	    \item 12-month churn rate
+	    \item Activation rate (first transaction within X days)
+	    \item Monthly active usage
+	    \item Average spend per customer
+	\end{itemize}
+	
+	\subsubsection{Initial Churn Analysis}
+	
+	The first step is to quantify and understand churn.
+	
+	\textbf{Key Analyses:}
+	\begin{itemize}
+	    \item Overall churn rate calculation
+	    \item Churn trend over time (monthly / quarterly)
+	    \item Time-to-churn analysis to identify early drop-off windows
+	\end{itemize}
+	
+	\textbf{Techniques Used:}
+	\begin{itemize}
+	    \item Cohort analysis (by issuance month)
+	    \item Funnel analysis (Issued $\rightarrow$ Activated $\rightarrow$ Retained)
+	    \item Survival analysis / Kaplan--Meier curves
+	\end{itemize}
+	
+	\textbf{Outcome:} Identify when churn is highest (e.g., first 30--90 days).
+	
+	\subsubsection{Segment-Level Analysis (Domain-Driven)}
+	
+	Churn is analyzed across multiple customer groups based on domain knowledge.
+	
+	\textbf{Example Segments:}
+	\begin{itemize}
+	    \item Acquisition channel (comparison sites, direct, referral)
+	    \item Credit risk tier / score bands
+	    \item Product type
+	    \item Demographics (age, income band)
+	    \item Early engagement behavior (activated vs non-activated)
+	\end{itemize}
+	
+	\textbf{Techniques Used:}
+	\begin{itemize}
+	    \item Group-by churn rate comparison
+	    \item Statistical tests (Chi-square, KS test)
+	\end{itemize}
+	
+	\textbf{Outcome:} Identify which customer groups are more likely to churn and at what stage.
+	
+	\subsubsection{Hypothesis Generation for Churn Drivers}
+	
+	Based on observed patterns, hypotheses are formed regarding why customers churn.
+	
+	\textbf{Example Hypotheses:}
+	\begin{itemize}
+	    \item Poor onboarding or delayed first transaction
+	    \item Low perceived value of rewards
+	    \item Early exposure to fees or high APR
+	    \item Negative early experiences (transaction declines, fraud blocks)
+	    \item Economic conditions impacting discretionary spending
+	\end{itemize}
+	
+	\textbf{Supporting Analysis:}
+	\begin{itemize}
+	    \item Correlation analysis
+	    \item Complaint and customer support analysis
+	    \item Exploratory data analysis (EDA)
+	\end{itemize}
+	
+	\textbf{Outcome:} A clear understanding of probable churn drivers.
+	
+	\subsubsection{Feature Engineering}
+	
+	Tailored features are created, focusing on early-life behavior.
+	
+	\textbf{Example Features:}
+	\begin{itemize}
+	    \item Time to first transaction
+	    \item Spend velocity in first 30/60/90 days
+	    \item Number of active days per month
+	    \item App login frequency
+	    \item Transaction decline counts
+	    \item Payment behavior (minimum vs full payment)
+	    \item Engagement with rewards or offers
+	\end{itemize}
+	
+	\textbf{Techniques Used:}
+	\begin{itemize}
+	    \item Aggregation features
+	    \item Time-based features
+	    \item Behavioral metrics
+	\end{itemize}
+	
+	\subsubsection{Machine Learning Modeling}
+	
+	Churn is framed as a supervised classification problem.
+	
+	\textbf{Target Variable:}
+	\begin{itemize}
+	    \item Binary indicator: churned within 12 months (Yes / No)
+	\end{itemize}
+	
+	\textbf{Models Considered:}
+	\begin{itemize}
+	    \item Logistic Regression (baseline and interpretability)
+	    \item Random Forest
+	    \item Gradient Boosting (XGBoost / LightGBM)
+	\end{itemize}
+	
+	\textbf{Performance Metrics:}
+	\begin{itemize}
+	    \item AUC-ROC
+	    \item Precision--Recall
+	    \item Lift and gain in top risk deciles
+	\end{itemize}
+	
+	\textbf{Outcome:} Early identification of high-risk customers.
+	
+	\subsubsection{Customer Segmentation (Optional Enhancement)}
+	
+	Behavioral segmentation is used to personalize interventions.
+	
+	\textbf{Techniques:}
+	\begin{itemize}
+	    \item K-Means or Hierarchical Clustering
+	    \item Features based on spend, engagement, and payment behavior
+	\end{itemize}
+	
+	\textbf{Example Segments:}
+	\begin{itemize}
+	    \item Signed-up but never used
+	    \item Low-spend cautious users
+	    \item High-spend but disengaged users
+	    \item Promotion-driven customers
+	\end{itemize}
+	
+	\subsubsection{Role of Generative AI (Optional but High-Impact)}
+	
+	\textbf{Use Cases:}
+	\begin{itemize}
+	    \item Personalized onboarding emails and push notifications
+	    \item Simplified reward explanations using natural language
+	    \item Summarizing customer complaints and support interactions
+	    \item Generating multiple offer/message variants for A/B testing
+	\end{itemize}
+	
+	\textbf{Models:}
+	\begin{itemize}
+	    \item Large Language Models (LLMs) fine-tuned to brand tone
+	    \item Sentiment analysis and topic modeling (e.g., BERTopic)
+	\end{itemize}
+	
+	\subsubsection{Intervention Strategy \& Measurement}
+	
+	\textbf{Actions:}
+	\begin{itemize}
+	    \item Target high-risk customers with personalized offers
+	    \item Improve onboarding for early-risk segments
+	    \item Adjust acquisition strategies if certain channels drive high churn
+	\end{itemize}
+	
+	\textbf{Measurement:}
+	\begin{itemize}
+	    \item A/B testing (control vs targeted group)
+	    \item Churn reduction uplift
+	    \item Incremental CLV improvement
+	\end{itemize}
+	
+	\subsubsection{Summary}
+	
+	By combining exploratory churn analysis, segment-based insights, hypothesis-driven feature engineering, machine learning models, and targeted interventions, the issuer can proactively reduce early-stage churn and improve customer lifetime value.
+	
+	\subsection{Sales Decline Over the Past Few Months}
+	
+	\subsubsection{Problem Framing}
+	
+	When a company’s sales are declining over the past few months, the first step is to clearly frame the problem, since ``sales'' can refer to different metrics.
+	
+	\textbf{Key Clarifications:}
+	\begin{itemize}
+	    \item Is the decline in revenue, units sold, or both?
+	    \item Is the decline company-wide or limited to specific products, regions, or channels?
+	    \item What is the time frame and baseline for comparison (MoM, YoY)?
+	    \item Is the decline driven by fewer customers, lower frequency, or lower spend per customer?
+	\end{itemize}
+	
+	\subsubsection{Step 1: Diagnose the Sales Decline (Exploratory Analysis)}
+	
+	Start with descriptive and diagnostic analysis to identify where the decline is occurring.
+	
+	\textbf{Key Analyses:}
+	\begin{itemize}
+	    \item Time-series trend analysis (MoM, YoY)
+	    \item Sales breakdown by:
+	    \begin{itemize}
+	        \item Product
+	        \item Region
+	        \item Channel
+	        \item Customer segment
+	    \end{itemize}
+	    \item Price vs volume analysis
+	\end{itemize}
+	
+	\textbf{Objective:} Identify which part of the business is contributing most to the decline.
+	
+	\subsubsection{Step 2: Funnel and Customer Behavior Analysis}
+	
+	Analyze the sales funnel to locate drop-offs.
+	
+	\textbf{Funnel Metrics:}
+	\begin{itemize}
+	    \item Traffic / impressions
+	    \item Conversion rate
+	    \item Average order value
+	    \item Repeat purchase rate
+	\end{itemize}
+	
+	\textbf{Customer-Level Analysis:}
+	\begin{itemize}
+	    \item Changes in purchase frequency
+	    \item Increase in customer churn
+	    \item Decline in customer lifetime value (CLV)
+	\end{itemize}
+	
+	\textbf{Objective:} Determine whether the problem lies in acquisition, conversion, or retention.
+	
+	\subsubsection{Step 3: Hypothesis Generation}
+	
+	Based on initial findings, generate data-driven hypotheses:
+	
+	\begin{itemize}
+	    \item Reduced demand due to economic or market conditions
+	    \item Pricing changes or reduced promotions
+	    \item Increased competitive pressure
+	    \item Product issues (quality, availability, stock-outs)
+	    \item Inefficient marketing spend or targeting
+	\end{itemize}
+	
+	These hypotheses guide deeper analysis and prevent random exploration.
+	
+	\subsubsection{Step 4: Deep-Dive Analysis and Modeling}
+	
+	Apply targeted data science techniques based on hypotheses:
+	
+	\begin{itemize}
+	    \item \textbf{Causal analysis / A/B test evaluation} \\
+	    To measure impact of pricing, promotions, or campaigns
+	
+	    \item \textbf{Customer segmentation and cohort analysis} \\
+	    To identify segments driving the decline
+	
+	    \item \textbf{Time-series analysis} \\
+	    To detect seasonality, demand shifts, or structural breaks
+	
+	    \item \textbf{Churn and repeat-purchase models} \\
+	    If existing customers are reducing purchases
+	\end{itemize}
+	
+	Models are used to support insights, not replace business understanding.
+	
+	\subsubsection{Step 5: Data-Backed Recommendations}
+	
+	Translate insights into actionable business recommendations:
+	
+	\begin{itemize}
+	    \item Optimize pricing or promotions for sensitive segments
+	    \item Improve targeting of high-value customers
+	    \item Fix funnel bottlenecks (conversion, checkout, inventory)
+	    \item Reallocate marketing spend to high-performing channels
+	\end{itemize}
+	
+	Where possible, recommend experiments or pilots to validate actions.
+	
+	\subsubsection{Step 6: Measurement and Monitoring}
+	
+	Define success metrics and track progress:
+	
+	\begin{itemize}
+	    \item Sales recovery rate
+	    \item Conversion and retention metrics
+	    \item Incremental lift from interventions
+	\end{itemize}
+	
+	Set up dashboards for ongoing monitoring and iteration.
+	
+	\subsubsection{Summary}
+	
+	By combining exploratory analysis, funnel diagnostics, hypothesis-driven modeling, and measurable business actions, a data scientist can identify the root causes of sales decline and support data-driven strategies to reverse the trend.
+	
+	
+	\subsection{Should a Hair Products Manufacturer Enter the Sunscreen Market?}
+	
+	\subsubsection{Executive Summary}
+	
+	Entering the sunscreen market can be a viable strategy if three conditions are met: the market is attractive, the brand has a credible right to win, and the economics are favorable. This decision should be validated using data-driven analysis and a pilot-led approach before scaling.
+	
+	\subsubsection{Problem Framing}
+	
+	The client is a hair products manufacturer considering entry into the sunscreen market.
+	
+	\textbf{Key Clarification Questions:}
+	\begin{itemize}
+	    \item What is the primary objective: revenue growth, brand extension, or diversification?
+	    \item Is the target segment mass-market, premium, or niche?
+	    \item Which geographies are in scope?
+	    \item Will manufacturing be in-house or outsourced?
+	\end{itemize}
+	
+	The goal is to evaluate whether entering the sunscreen category is strategically and financially viable.
+	
+	\subsubsection{Market Attractiveness Analysis}
+	
+	Assess whether the sunscreen category is large, growing, and profitable.
+	
+	\textbf{Key Analyses:}
+	\begin{itemize}
+	    \item Market size and growth trends
+	    \item Seasonality patterns (summer vs winter demand)
+	    \item Margin structure and promotional intensity
+	\end{itemize}
+	
+	\textbf{Data Sources:}
+	\begin{itemize}
+	    \item Industry sales data
+	    \item Search and trend data
+	    \item Retail and e-commerce benchmarks
+	\end{itemize}
+	
+	\textbf{Objective:} Determine if the market offers sustainable growth and attractive economics.
+	
+	\subsubsection{Right to Win: Brand \& Customer Fit}
+	
+	Evaluate whether the client has a credible right to compete in this category.
+	
+	\textbf{Key Questions:}
+	\begin{itemize}
+	    \item Is the brand trusted beyond hair care into personal care?
+	    \item Do existing customers already purchase skincare or sunscreen products?
+	    \item Can existing distribution and marketing channels be leveraged?
+	\end{itemize}
+	
+	\textbf{Analyses:}
+	\begin{itemize}
+	    \item Customer overlap analysis
+	    \item Basket and affinity analysis
+	    \item Demographic and brand perception alignment
+	\end{itemize}
+	
+	\textbf{Insight:} A natural adjacency (e.g., scalp or hair sunscreen) strengthens brand fit.
+	
+	\subsubsection{Competitive Landscape \& Differentiation}
+	
+	Assess whether the client can meaningfully differentiate.
+	
+	\textbf{Key Analyses:}
+	\begin{itemize}
+	    \item Competitive benchmarking (features, pricing, positioning)
+	    \item Identification of white spaces or unmet needs
+	    \item Evaluation of defensibility of differentiation
+	\end{itemize}
+	
+	\textbf{Risk:} Without differentiation, the product risks becoming a low-margin “me-too” offering.
+	
+	\subsubsection{Hypothesis Generation}
+	
+	Form testable hypotheses based on prior analysis:
+	
+	\begin{itemize}
+	    \item Existing hair-care customers will adopt sunscreen due to brand trust
+	    \item Scalp and hair-focused sunscreen offers a unique value proposition
+	    \item Strong seasonality creates inventory and forecasting risks
+	\end{itemize}
+	
+	These hypotheses guide modeling and experimentation.
+	
+	\subsubsection{Forecasting \& Scenario Modeling}
+	
+	Use assumption-driven models to evaluate outcomes.
+	
+	\textbf{Models and Techniques:}
+	\begin{itemize}
+	    \item Market penetration scenarios (low / base / high)
+	    \item Revenue and margin projections
+	    \item Cannibalization and sensitivity analysis
+	    \item Time-series analysis for seasonality
+	\end{itemize}
+	
+	\textbf{Objective:} Understand upside potential and downside risk before committing capital.
+	
+	\subsubsection{Pilot \& Experimentation Strategy}
+	
+	Recommend a controlled pilot before full-scale launch.
+	
+	\textbf{Pilot Approach:}
+	\begin{itemize}
+	    \item Limited SKU or regional launch
+	    \item Online-first or direct-to-consumer (DTC) channel
+	    \item Bundling with existing hair products
+	\end{itemize}
+	
+	\textbf{Success Metrics:}
+	\begin{itemize}
+	    \item Conversion rate
+	    \item Repeat purchase rate
+	    \item Incremental revenue and margin
+	\end{itemize}
+	
+	\subsubsection{Final Recommendation}
+	
+	Entering the sunscreen market is advisable only if:
+	\begin{itemize}
+	    \item The market shows attractive growth and margins
+	    \item There is strong customer overlap and brand credibility
+	    \item The company can differentiate in a defensible way
+	    \item Pilot results validate demand and unit economics
+	\end{itemize}
+	
+	\subsubsection{One-Line Executive Summary}
+	
+	Assess market attractiveness, right to win, and economics using data-driven analysis, and proceed with a pilot only if there is a clear, defensible path to profitable growth.
+	
+\end{document}

@@ -1,0 +1,901 @@
+{
+  "doc-7b8b1c8f6400bcdb16a3488c52022fb4": {
+    "relation_pairs": [
+      [
+        "LightRAG",
+        "Text-only"
+      ],
+      [
+        "70.0% Overall Score",
+        "Ablation Study Results on DocBench (table)"
+      ],
+      [
+        "Multimodal Language Model Response Function (equation)",
+        "P(q)"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "W/O Reranker"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "RAGAnything"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "Law"
+      ],
+      [
+        "Set of Edges",
+        "Set of Vertices"
+      ],
+      [
+        "Finance",
+        "RAGAnything"
+      ],
+      [
+        "MMLongBench QA Counts",
+        "Performance Evaluation Charts (image)"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "Overall Accuracy"
+      ],
+      [
+        "MMGraphRAG",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "LightRAG",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "Atomic Content Units",
+        "Decomposition of Multimodal Knowledge Sources (equation)"
+      ],
+      [
+        "Dual-Graph Construction for Multimodal Knowledge",
+        "Text-Based Knowledge Graph"
+      ],
+      [
+        "GPT-40-mini",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "MMLongBench",
+        "Table 1"
+      ],
+      [
+        "Ablation Study",
+        "Chunk-Only"
+      ],
+      [
+        "Ablation Study",
+        "RAG-Anything"
+      ],
+      [
+        "Multimodal Language Model Response Function (equation)",
+        "V*(q)"
+      ],
+      [
+        "Multimodal Language Model Response Function (equation)",
+        "Multimodal Question-Answering Systems"
+      ],
+      [
+        "Mathematical Equation",
+        "Multimodal Vertex Entities"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "Financial Domain"
+      ],
+      [
+        "Decomposition of Multimodal Knowledge Sources (equation)",
+        "Multimodal Corpus"
+      ],
+      [
+        "Dual-Graph Methodology",
+        "Generated Textual Description"
+      ],
+      [
+        "Multimodal Graph Construction Equation (equation)",
+        "Semantic Search"
+      ],
+      [
+        "DAE Panel",
+        "Multimodal Document with t-SNE Analysis (image)"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Mathematical Equation Analysis"
+      ],
+      [
+        "Multimodal Language Model Response Function (equation)",
+        "q"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "GPT-4o-mini"
+      ],
+      [
+        "Multi-Panel Figure Interpretation Case",
+        "Multimodal Document with t-SNE Analysis (image)"
+      ],
+      [
+        "Page Range Categories",
+        "Performance Evaluation Charts (image)"
+      ],
+      [
+        "Accuracy",
+        "MMLongBench"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "DocBench"
+      ],
+      [
+        "Graph Structure",
+        "Mapping of Content Unit"
+      ],
+      [
+        "MMLongBench",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "Government"
+      ],
+      [
+        "Question Prompt",
+        "VAE Panel"
+      ],
+      [
+        "Financial Reports",
+        "RAG-Anything"
+      ],
+      [
+        "Financial Document",
+        "Novo Nordisk Financial Analysis Image (image)"
+      ],
+      [
+        "60.0% Overall Score",
+        "Chunk-Only"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Structured Knowledge Representation"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "News"
+      ],
+      [
+        "DocBench Dataset",
+        "DocBench Multimodal Performance Table (table)"
+      ],
+      [
+        "RAG-Anything",
+        "Research Reports/Introductions"
+      ],
+      [
+        "V",
+        "c"
+      ],
+      [
+        "RAG-Anything Framework Overview (image)",
+        "Vector Database"
+      ],
+      [
+        "2019",
+        "Evidence Table"
+      ],
+      [
+        "2018",
+        "Novo Nordisk Financial Analysis Image (image)"
+      ],
+      [
+        "Academic Papers",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "DocBench",
+        "RAG-Anything"
+      ],
+      [
+        "MMLongBench Performance Comparison Table (table)",
+        "RAG-Anything"
+      ],
+      [
+        "Decompose",
+        "Mathematical Equation"
+      ],
+      [
+        "Graph Representation",
+        "Multimodal Graph Construction Equation (equation)"
+      ],
+      [
+        "Multimodal Knowledge Graph",
+        "Semantic Search"
+      ],
+      [
+        "Mathematical Equation",
+        "Multimodal Retrieval Systems"
+      ],
+      [
+        "E",
+        "emb"
+      ],
+      [
+        "Multimodel Document",
+        "Novo Nordisk Financial Analysis Image (image)"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "Chunk-Only"
+      ],
+      [
+        "Academia",
+        "DocBench Multimodal Performance Table (table)"
+      ],
+      [
+        "V",
+        "emb"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "RAG-Anything"
+      ],
+      [
+        "RAG-Anything",
+        "RAG-Anything Framework Overview (image)"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Set of Vertices"
+      ],
+      [
+        "Intra-Chunk Entities",
+        "Multimodal Graph Construction Equation (equation)"
+      ],
+      [
+        "Academic Domain",
+        "Performance Metrics"
+      ],
+      [
+        "News",
+        "RAGAnything"
+      ],
+      [
+        "Multimodal Language Model Response Function (equation)",
+        "Response"
+      ],
+      [
+        "MMLongBench Accuracy",
+        "Page Range Categories"
+      ],
+      [
+        "Dual-Graph Construction for Multimodal Knowledge",
+        "RAG-Anything"
+      ],
+      [
+        "Atomic Content Units",
+        "Knowledge Source"
+      ],
+      [
+        "2019",
+        "Novo Nordisk Financial Analysis Image (image)"
+      ],
+      [
+        "RAG-Anything Framework Overview (image)",
+        "Structured Content List"
+      ],
+      [
+        "Belongs To Edges",
+        "Multimodal Graph Construction Equation (equation)"
+      ],
+      [
+        "Similarity Searches",
+        "emb"
+      ],
+      [
+        "Cross-Modal Knowledge Graph",
+        "RAG-Anything Framework Overview (image)"
+      ],
+      [
+        "RAG-Anything",
+        "Statistics of Experimental Datasets"
+      ],
+      [
+        "Graph Representation",
+        "Multimodal Knowledge Graph"
+      ],
+      [
+        "Decompose",
+        "RAG-Anything Framework"
+      ],
+      [
+        "DAE Panel",
+        "VAE Panel"
+      ],
+      [
+        "Graph Structure",
+        "Structured Knowledge Representation"
+      ],
+      [
+        "DocBench QA Counts",
+        "Performance Evaluation Charts (image)"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "Multimodal"
+      ],
+      [
+        "Hybrid Retrieval Mechanisms",
+        "Response"
+      ],
+      [
+        "Hybrid Retrieval Mechanisms",
+        "Multimodal Language Model Response Function (equation)"
+      ],
+      [
+        "DocBench Dataset",
+        "MMGraphRAG"
+      ],
+      [
+        "Performance Metrics",
+        "RAG-Anything"
+      ],
+      [
+        "Decompose",
+        "Decomposition of Multimodal Knowledge Sources (equation)"
+      ],
+      [
+        "Guidebooks",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "RAG-Anything Framework Overview (image)",
+        "Text-Based Knowledge Graph"
+      ],
+      [
+        "DocBench",
+        "Statistics of Experimental Datasets (table)"
+      ],
+      [
+        "Mathematical Equation",
+        "Unified Embedding Function for Multimodal Knowledge (equation)"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Generated Textual Description"
+      ],
+      [
+        "Multimodal Document with t-SNE Analysis (image)",
+        "VAE Panel"
+      ],
+      [
+        "Governmental Domain",
+        "Performance Metrics"
+      ],
+      [
+        "MMLongBench",
+        "Table 3"
+      ],
+      [
+        "Accuracy",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "Belongs To Edges",
+        "Multimodal Knowledge Graph"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "Text-only"
+      ],
+      [
+        "Multimodal Retrieval Systems",
+        "Unified Embedding Function for Multimodal Knowledge (equation)"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "MMGraphRAG"
+      ],
+      [
+        "MMGraphRAG",
+        "MMLongBench"
+      ],
+      [
+        "Response",
+        "VLM"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Dual-Graph Methodology"
+      ],
+      [
+        "DocBench Accuracy",
+        "Page Range Categories"
+      ],
+      [
+        "E",
+        "Unified Embedding Function for Multimodal Knowledge (equation)"
+      ],
+      [
+        "Financial Reports",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "Multimodal Language Model Response Function (equation)",
+        "VLM"
+      ],
+      [
+        "Query Processing",
+        "RAG-Anything Framework Overview (image)"
+      ],
+      [
+        "Unified Embedding Function for Multimodal Knowledge (equation)",
+        "V"
+      ],
+      [
+        "MMLongBench Performance Comparison Table (table)",
+        "Tutorials/Workshops"
+      ],
+      [
+        "Multi-Panel Figure Interpretation Case",
+        "Multimodal Document"
+      ],
+      [
+        "Evidence Table",
+        "Multimodel Document"
+      ],
+      [
+        "Equation",
+        "Graph Structure"
+      ],
+      [
+        "Function R",
+        "Set of Vertices"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "News Domain"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Graph Structure"
+      ],
+      [
+        "DocBench Accuracy",
+        "DocBench QA Counts"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "Unannotated Type"
+      ],
+      [
+        "Mathematical Equation",
+        "RAG-Anything Framework"
+      ],
+      [
+        "Retrieval and Response Generation",
+        "Vector Database"
+      ],
+      [
+        "Brochures",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "Legal Domain",
+        "Performance Metrics"
+      ],
+      [
+        "Decomposition of Multimodal Knowledge Sources (equation)",
+        "Modality Type"
+      ],
+      [
+        "DocBench Dataset",
+        "LightRAG"
+      ],
+      [
+        "Multimodal Document",
+        "Multimodal Document with t-SNE Analysis (image)"
+      ],
+      [
+        "Similarity Searches",
+        "Unified Embedding Function for Multimodal Knowledge (equation)"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "Text Type"
+      ],
+      [
+        "Ablation Study",
+        "W/O Reranker"
+      ],
+      [
+        "Government",
+        "MMGraphRAG"
+      ],
+      [
+        "Overall Accuracy",
+        "RAGAnything"
+      ],
+      [
+        "Performance Evaluation Charts (image)",
+        "RAGAnything"
+      ],
+      [
+        "Multi-Panel Figure Interpretation Case",
+        "VAE Panel"
+      ],
+      [
+        "26,778",
+        "Novo Nordisk Financial Analysis Image (image)"
+      ],
+      [
+        "MMLongBench Accuracy",
+        "MMLongBench QA Counts"
+      ],
+      [
+        "RAG-Anything Framework Overview (image)",
+        "VLM/LLM"
+      ],
+      [
+        "DocBench Accuracy",
+        "RAGAnything"
+      ],
+      [
+        "Administration/Industry Files",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "Multimodal Type",
+        "Performance Metrics"
+      ],
+      [
+        "RAG-Anything",
+        "Statistics of Experimental Datasets (table)"
+      ],
+      [
+        "DAE Panel",
+        "Multi-Panel Figure Interpretation Case"
+      ],
+      [
+        "Cross-Modal Retrieval",
+        "RAG-Anything Framework"
+      ],
+      [
+        "63.4% Overall Score",
+        "RAG-Anything"
+      ],
+      [
+        "62.4% Overall Score",
+        "Ablation Study Results on DocBench (table)"
+      ],
+      [
+        "Mathematical Equation",
+        "Multimodal Graph Construction Equation (equation)"
+      ],
+      [
+        "RAG-Anything Framework Overview (image)",
+        "Retrieval and Response Generation"
+      ],
+      [
+        "Atom Content Chunks",
+        "c"
+      ],
+      [
+        "62.4% Overall Score",
+        "W/O Reranker"
+      ],
+      [
+        "Multimodal Graph Construction Equation (equation)",
+        "Multimodal Knowledge Graph"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Set of Edges"
+      ],
+      [
+        "Multimodal Knowledge Unification",
+        "RAG-Anything"
+      ],
+      [
+        "Performance Metrics",
+        "Unannotated Type"
+      ],
+      [
+        "Intra-Chunk Entities",
+        "Multimodal Vertex Entities"
+      ],
+      [
+        "Mathematical Analysis",
+        "Mathematical Equation"
+      ],
+      [
+        "Decomposition of Multimodal Knowledge Sources (equation)",
+        "Mathematical Equation"
+      ],
+      [
+        "Unified Embedding Function for Multimodal Knowledge (equation)",
+        "c"
+      ],
+      [
+        "DAE Panel",
+        "Question Prompt"
+      ],
+      [
+        "MMLongBench Performance Comparison Table (table)",
+        "Research Reports/Introductions"
+      ],
+      [
+        "Statistics of Experimental Datasets",
+        "Statistics of Experimental Datasets (table)"
+      ],
+      [
+        "Multi-Panel Figure Interpretation Case",
+        "t-SNE Plots"
+      ],
+      [
+        "Advanced AI Systems",
+        "Hybrid Retrieval Mechanisms"
+      ],
+      [
+        "Multimodal Graph Construction Equation (equation)",
+        "Multimodal Vertex Entities"
+      ],
+      [
+        "Multimodal Graph Construction Equation (equation)",
+        "Natural Language Processing"
+      ],
+      [
+        "2020",
+        "Novo Nordisk Financial Analysis Image (image)"
+      ],
+      [
+        "LightRAG",
+        "MMLongBench"
+      ],
+      [
+        "GPT-40-mini",
+        "MMLongBench"
+      ],
+      [
+        "Performance Metrics",
+        "Text Type"
+      ],
+      [
+        "Four Separate Charts",
+        "Performance Evaluation Charts (image)"
+      ],
+      [
+        "Unified Embedding Function for Multimodal Knowledge (equation)",
+        "emb"
+      ],
+      [
+        "DocBench",
+        "Table 1"
+      ],
+      [
+        "Carbon-Fiber Spikes",
+        "MMLongBench Performance Comparison Table (table)"
+      ],
+      [
+        "MMLongBench",
+        "Statistics of Experimental Datasets (table)"
+      ],
+      [
+        "Atomic Content Units",
+        "Modality Type"
+      ],
+      [
+        "VLM",
+        "q"
+      ],
+      [
+        "Novo Nordisk Financial Analysis Image (image)",
+        "Wages and Salaries"
+      ],
+      [
+        "P(q)",
+        "Response"
+      ],
+      [
+        "DocBench Dataset",
+        "GPT-4o-mini"
+      ],
+      [
+        "News Domain",
+        "Performance Metrics"
+      ],
+      [
+        "Financial Domain",
+        "Performance Metrics"
+      ],
+      [
+        "MMLongBench Accuracy",
+        "Performance Evaluation Charts (image)"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Function R"
+      ],
+      [
+        "MMLongBench",
+        "RAG-Anything"
+      ],
+      [
+        "Response",
+        "V*(q)"
+      ],
+      [
+        "Figure 3",
+        "Multimodal Document with t-SNE Analysis (image)"
+      ],
+      [
+        "Multimodal Document with t-SNE Analysis (image)",
+        "t-SNE Plots"
+      ],
+      [
+        "Evidence Table",
+        "Novo Nordisk Financial Analysis Image (image)"
+      ],
+      [
+        "Multimodal Document with t-SNE Analysis (image)",
+        "Question Prompt"
+      ],
+      [
+        "DocBench Accuracy",
+        "MMGraphRAG"
+      ],
+      [
+        "Multimodal Knowledge Graph",
+        "Natural Language Processing"
+      ],
+      [
+        "2018",
+        "Evidence Table"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "Performance Metrics"
+      ],
+      [
+        "Decomposition of Multimodal Knowledge Sources (equation)",
+        "RAG-Anything Framework"
+      ],
+      [
+        "Mathematical Equation",
+        "T"
+      ],
+      [
+        "T",
+        "Unified Embedding Function for Multimodal Knowledge (equation)"
+      ],
+      [
+        "Dual-Graph Construction for Multimodal Knowledge",
+        "RAG-Anything Framework Overview (image)"
+      ],
+      [
+        "Decomposition of Multimodal Knowledge Sources (equation)",
+        "Knowledge Source"
+      ],
+      [
+        "Ablation Study",
+        "Ablation Study Results on DocBench (table)"
+      ],
+      [
+        "MMLongBench Performance Comparison Table (table)",
+        "Table 3"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "Legal Domain"
+      ],
+      [
+        "Financial Document",
+        "Multimodel Document"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "Academic Domain"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Equation"
+      ],
+      [
+        "Evidence Table",
+        "Wages and Salaries"
+      ],
+      [
+        "Cross-Modal Retrieval",
+        "Dual-Graph Construction Mapping (equation)"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "Multimodal Type"
+      ],
+      [
+        "Advanced AI Systems",
+        "Multimodal Language Model Response Function (equation)"
+      ],
+      [
+        "MMGraphRAG",
+        "Performance Evaluation Charts (image)"
+      ],
+      [
+        "Mathematical Analysis",
+        "Multimodal Graph Construction Equation (equation)"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "LightRAG"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "Finance"
+      ],
+      [
+        "60.0% Overall Score",
+        "Ablation Study Results on DocBench (table)"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "Mapping of Content Unit"
+      ],
+      [
+        "DocBench Dataset",
+        "RAGAnything"
+      ],
+      [
+        "Statistics of Experimental Datasets (table)",
+        "Table 1"
+      ],
+      [
+        "Ablation Study",
+        "DocBench"
+      ],
+      [
+        "Cross-Modal Knowledge Graph",
+        "Dual-Graph Construction for Multimodal Knowledge"
+      ],
+      [
+        "DocBench Multimodal Performance Table (table)",
+        "Unanswerable Queries"
+      ],
+      [
+        "26,778",
+        "Wages and Salaries"
+      ],
+      [
+        "Query Processing",
+        "Retrieval and Response Generation"
+      ],
+      [
+        "Atom Content Chunks",
+        "Unified Embedding Function for Multimodal Knowledge (equation)"
+      ],
+      [
+        "Ablation Study Results on DocBench (table)",
+        "Governmental Domain"
+      ],
+      [
+        "Multimodal Knowledge Unification",
+        "RAG-Anything Framework Overview (image)"
+      ],
+      [
+        "DocBench Accuracy",
+        "Performance Evaluation Charts (image)"
+      ],
+      [
+        "Dual-Graph Construction Mapping (equation)",
+        "RAG-Anything Framework"
+      ]
+    ],
+    "count": 223,
+    "update_time": 1760918281,
+    "_id": "doc-7b8b1c8f6400bcdb16a3488c52022fb4"
+  }
+}

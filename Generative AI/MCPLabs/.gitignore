@@ -1,0 +1,83 @@
+# Secrets and Environment Variables
+*.env
+.env
+.env.local
+.env.*.local
+**/.env
+secrets.yml
+config/secrets.yml
+
+# API Keys and Tokens
+*token*
+*secret*
+*key*.txt
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Machine Learning Specific
+# Model files
+*.h5
+*.hdf5
+*.pb
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+
+# TensorBoard
+events.out.tfevents.*
+
+# System Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z

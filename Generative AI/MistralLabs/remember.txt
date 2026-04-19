@@ -1,0 +1,11 @@
+How to write workflows? 
+n = 4 
+for each n in range(0,n);
+    1. generate a summary
+    2. store that summary as summary_{}.txt
+
+# if i give some psuedocode ( basically a workflow then it should be able to follow that procedures)
+# completing the workdlow 
+# selecting the tools 
+# executing the tools 
+# ... 
