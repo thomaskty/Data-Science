@@ -343,6 +343,31 @@
 
 	Regularization methods modify the ordinary least squares (OLS) objective by adding a penalty on the size of the coefficients.
 	This helps control model complexity, reduce overfitting, and handle multicollinearity.
+	
+	Informally, a norm is a function that accepts as input a vector from our vector space V
+	and spits out a real number that tells us how big that vector is. In order for a function to qualify as a norm, it must first fulfill some properties, so that the results of this metrization process kind of “make sense”. These properties are the following.
+		\begin{itemize}
+			\item Positive Definite
+			\item Absolute scalable
+			\item Triangular Inequality
+		\end{itemize}
+	
+	The Euclidean norm (or \(L^2\)-norm) of a vector
+	\[
+	x = (x_1, x_2, \dots, x_n)
+	\]
+	is defined as
+	\[
+	\|x\|_2 = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}.
+	\]
+	
+	More generally, the \(p\)-norm of a vector is
+	\[
+	\|x\|_p = \left( \sum_{i=1}^{n} |x_i|^p \right)^{1/p}.
+	\]
+	
+	The Euclidean norm is obtained when \(p = 2\).
+	
 
 	\begin{itemize}
 
@@ -568,14 +593,6 @@
 
 
 	\subsection{Metrics from L-P Norm}
-	Informally, a norm is a function that accepts as input a vector from our vector space V
-	and spits out a real number that tells us how big that vector is. In order for a function to qualify as a norm, it must first fulfill some properties, so that the results of this metrization process kind of “make sense”. These properties are the following.
-	\begin{itemize}
-		\item Positive Definite
-		\item Absolute scalable
-		\item Triangular Inequality
-	\end{itemize}
-
 	\begin{align*}
 			\Large MAE = \frac{1}{m}\sum^{m}_{i=1}|y_i -\hat{y}_i| \Large\\
 			\Large MSE = \frac{1}{m}\sum^{m}_{i=1}(y_i -\hat{y}_i)^2 \Large
@@ -5205,7 +5222,55 @@
 
 
 	\subsection{Cross Validation Algorithm}
-
+	
+	\subsubsection{Holdout Validation}
+	The dataset is split into:
+	\begin{itemize}
+	    \item Training set
+	    \item Testing set
+	\end{itemize}
+	
+	The model is trained on the training set and evaluated on the testing set.
+	
+	\subsubsection{Leave-One-Out Cross Validation (LOOCV)}
+	For a dataset with \(n\) observations:
+	\begin{itemize}
+	    \item Train on \(n-1\) observations
+	    \item Test on 1 observation
+	    \item Repeat \(n\) times
+	\end{itemize}
+	
+	The final error is the average validation error.
+	
+	\subsubsection{Leave-\(p\)-Out Cross Validation}
+	In leave-\(p\)-out cross validation:
+	\begin{itemize}
+	    \item Leave \(p\) observations for testing
+	    \item Train on the remaining \(n-p\) observations
+	    \item Repeat for all possible combinations
+	\end{itemize}
+	
+	\subsubsection{Repeated Cross Validation}
+	\(k\)-fold cross validation is repeated multiple times using different random splits.
+	
+	The final performance is the average across repetitions.
+	
+	\subsubsection{Stratified Cross Validation}
+	Each fold preserves the class distribution of the original dataset.
+	
+	Used mainly for imbalanced classification problems.
+	
+	\subsubsection{Time Series Cross Validation}
+	Temporal order is preserved:
+	\begin{itemize}
+	    \item Train on past observations
+	    \item Test on future observations
+	\end{itemize}
+	
+	This prevents data leakage in time series data.
+	
+	
+	\subsubsection{k -fold}
 	Cross-validation estimates generalization error by repeated data splitting.
 	\begin{itemize}
 		\item \textbf{KFold Cross Validation:}
