@@ -153,56 +153,245 @@
 				Y= \beta_0 + \beta_1 X + \epsilon
 	\end{align*}
 
-
 		\item The above equation is the population regression equation;
-		\item $\beta_0$ is the intercept term-that is, the expected value of $Y$ when $X=0$
-		\item
-		$\beta_1$ is the slope—the average increase in $Y$ associated with a one unit increase in $X$.
-
-		\item The error term is a catch-all for what we miss with this simple model ( the true relationship is probably not linear, there may be other variables that cause variation in $Y$, and there may be measurement error)
-		\item We typically assume that the error term is independent of $X$.
 
 		\item The unknown coefficients $\beta_0$ and $\beta_1$ in the population regression line is unknown. We estimate these unknown coefficients using the principle of least squares.
 
-	\begin{align*}\Large \hat{\beta_1} &= \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i-\bar{y})}{\sum_{i=1}^{n} (x_i - \bar{x})^2} = \frac{S_{xy}}{S_{xx}}\\
-				\Large \hat{\beta_0} &= \bar{y} - \hat{\beta_1}\bar{x}
-	\end{align*}
 
+	
+	To estimate the unknown coefficients, we minimize the \textbf{Residual Sum of Squares (RSS)}:
+	
+	\[
+	RSS = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+	\]
+	
+	Since
+	
+	\[
+	\hat{y}_i = \beta_0 + \beta_1 x_i,
+	\]
+	
+	the objective function becomes
+	
+	\[
+	RSS(\beta_0,\beta_1)
+	=
+	\sum_{i=1}^{n} (y_i - \beta_0 - \beta_1 x_i)^2
+	\]
+	
+	We obtain the least squares estimates by differentiating \(RSS\) with respect to
+	\(\beta_0\) and \(\beta_1\), and setting the derivatives equal to zero.
+	
+	\paragraph{Step 1: Differentiate with respect to \(\beta_0\)}
+	
+	\[
+	\frac{\partial RSS}{\partial \beta_0}
+	=
+	-2\sum_{i=1}^{n}(y_i-\beta_0-\beta_1x_i)=0
+	\]
+	
+	\[
+	\Rightarrow
+	\sum_{i=1}^{n} y_i
+	=
+	n\beta_0+\beta_1\sum_{i=1}^{n}x_i
+	\]
+	
+	Dividing by \(n\),
+	
+	\[
+	\bar{y} = \beta_0 + \beta_1\bar{x}
+	\]
+	
+	Hence,
+	
+	\[
+	\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}
+	\]
+	
+	\paragraph{Step 2: Differentiate with respect to \(\beta_1\)}
+	
+	\[
+	\frac{\partial RSS}{\partial \beta_1}
+	=
+	-2\sum_{i=1}^{n}x_i(y_i-\beta_0-\beta_1x_i)=0
+	\]
+	
+	Substituting
+	\(
+	\beta_0=\bar{y}-\beta_1\bar{x}
+	\)
+	and simplifying,
+	
+	\[
+	\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})
+	=
+	\beta_1
+	\sum_{i=1}^{n}(x_i-\bar{x})^2
+	\]
+	
+	Therefore,
+	
+	\[
+	\hat{\beta}_1
+	=
+	\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
+	{\sum_{i=1}^{n}(x_i-\bar{x})^2}
+	=
+	\frac{S_{xy}}{S_{xx}}
+	\]
+	
+	Thus, the least squares estimates are
+	
+	\[
+	\boxed{
+	\hat{\beta}_1
+	=
+	\frac{S_{xy}}{S_{xx}}
+	}
+	\]
+	
+	\[
+	\boxed{
+	\hat{\beta}_0
+	=
+	\bar{y}-\hat{\beta}_1\bar{x}
+	}
+	\]
+	
+	Hence, the fitted regression line is
+	
+	\[
+	\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1 X
+	\]
 
-		\item For each 1-unit increase in the predictor, the predicted value of the target increases by $\beta$ (coefficient x unit of target), holding all other variables constant.
 	\end{itemize}
 
 	\subsection{Correlation and Covariance}
+	
 	\begin{itemize}
+	
 		\item \textbf{Covariance} measures whether two variables move together.
 		A positive covariance means they increase or decrease together, while a negative covariance means they move in opposite directions.
-
-		\item The \textbf{magnitude of covariance} depends on the scale of the variables, which makes it hard to compare across datasets.
-		This is why covariance alone is not a standardized measure of relationship.
-
-	\begin{equation*}
-				\Large cov(X, Y) = \frac{\sum{(X_i - \bar{X})(Y_i - \bar{Y})}}{N}
-	\end{equation*}
-
-
-		\item \textbf{Correlation} is the normalized form of covariance, obtained by dividing by the product of standard deviations.
-		This makes correlation always lie in the range $[-1, 1]$.
-
-	\begin{align*}
-				\Large Cor(X,Y) = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum(x_i-\bar{x})^2 \sum(y_i-\bar{y})^2}}
-	\end{align*}
-
-	\begin{equation*}
-				\Large r = \frac{cov(X, Y)}{\sqrt{var(X) \cdot var(Y)}}
-	\end{equation*}
-
-
-		\item A correlation of \textbf{$+1$} means a perfect increasing linear relationship,
-
-		\textbf{$-1$} means a perfect decreasing linear relationship,
-		and \textbf{$0$} means no linear association.
-
-		\item Covariance and correlation do \emph{not} imply causation—they only describe how variables co-vary, not why.
+	
+		\begin{equation*}
+			\Large
+			cov(X,Y)
+			=
+			\frac{1}{N}
+			\sum_{i=1}^{N}
+			(X_i-\bar{X})(Y_i-\bar{Y})
+		\end{equation*}
+	
+		\item The numerator term appears frequently in statistics and regression, so it is commonly written as:
+	
+		\begin{equation*}
+			\Large
+			S_{xy}
+			=
+			\sum_{i=1}^{N}
+			(X_i-\bar{X})(Y_i-\bar{Y})
+		\end{equation*}
+	
+		Hence:
+	
+		\begin{equation*}
+			\Large
+			cov(X,Y)
+			=
+			\frac{S_{xy}}{N}
+		\end{equation*}
+	
+		\item Similarly, the variance-related quantities are written as:
+	
+		\begin{equation*}
+			\Large
+			S_{xx}
+			=
+			\sum_{i=1}^{N}
+			(X_i-\bar{X})^2
+		\end{equation*}
+	
+		\begin{equation*}
+			\Large
+			S_{yy}
+			=
+			\sum_{i=1}^{N}
+			(Y_i-\bar{Y})^2
+		\end{equation*}
+	
+		where:
+	
+		\[
+		S_{xx} \text{ measures variation in } X
+		\]
+	
+		\[
+		S_{yy} \text{ measures variation in } Y
+		\]
+	
+		\[
+		S_{xy} \text{ measures joint variation between } X \text{ and } Y
+		\]
+	
+		\item The \textbf{magnitude of covariance} depends on the scale of the variables, making it difficult to compare relationships across datasets.
+	
+		\item \textbf{Correlation} is the normalized form of covariance.
+		It removes scale dependence by dividing covariance by the product of standard deviations.
+	
+		\begin{equation*}
+			\Large
+			r
+			=
+			\frac{cov(X,Y)}
+			{\sqrt{var(X)var(Y)}}
+		\end{equation*}
+	
+		Using the \(S\)-notation:
+	
+		\begin{equation*}
+			\Large
+			r
+			=
+			\frac{S_{xy}}
+			{\sqrt{S_{xx}S_{yy}}}
+		\end{equation*}
+	
+		\item Since correlation is normalized, it always lies in the range:
+	
+		\[
+		-1 \le r \le 1
+		\]
+	
+		\item Interpretation of correlation:
+	
+		\begin{itemize}
+			\item \(r = +1\): perfect positive linear relationship
+			\item \(r = -1\): perfect negative linear relationship
+			\item \(r = 0\): no linear relationship
+		\end{itemize}
+	
+		\item Covariance and correlation describe association, not causation.
+		A strong correlation does not imply that one variable causes the other.
+	
+		\item The \(S_{xx}, S_{yy}, S_{xy}\) notation is extremely important in linear regression because the slope estimator can be written compactly as:
+	
+		\begin{equation*}
+			\Large
+			\hat{\beta}_1
+			=
+			\frac{S_{xy}}{S_{xx}}
+		\end{equation*}
+	
+		This provides an intuitive interpretation:
+	
+		\[
+		\text{Slope}
+		=
+		\frac{\text{joint variation}}
+		{\text{variation in } X}
+		\]
+	
 	\end{itemize}
 
 
@@ -237,10 +426,207 @@
 			\item Can become ill-conditioned when predictors are highly collinear.
 		\end{itemize}
 
-		
-
 		\item This closed-form estimator is called the \textbf{Ordinary Least Squares (OLS)} solution and provides the best linear unbiased estimator (BLUE) under the Gauss–Markov assumptions.
 	\end{itemize}
+	
+	
+	Consider the multiple linear regression model: $\hat{y} = Xw $, where $ X \in \mathbb{R}^{n \times d} $ is the feature matrix, $ w \in \mathbb{R}^{d \times 1}$ is the parameter vector, and $ y \in \mathbb{R}^{n \times 1}$ is the target vector. The Residual Sum of Squares (RSS) loss is: $RSS=(y-Xw)^\top(y-Xw) $
+	
+	
+	\paragraph{Step 1: Expand the Quadratic Form}
+	
+	We use the matrix identity:
+	
+	\[
+	(a-b)^\top(a-b)
+	=
+	a^\top a - a^\top b - b^\top a + b^\top b
+	\]
+
+	
+	Then:
+	
+	\[
+	RSS
+	=
+	y^\top y
+	-
+	y^\top Xw
+	-
+	(Xw)^\top y
+	+
+	(Xw)^\top(Xw)
+	\]
+	
+	Now simplify each term.
+	
+	Using the transpose identity:
+	
+	\[
+	(AB)^\top = B^\top A^\top
+	\]
+	
+	Thus:
+	
+	\[
+	RSS
+	=
+	y^\top y
+	-
+	y^\top Xw
+	-
+	w^\top X^\top y
+	+
+	w^\top X^\top X w
+	\]
+	
+	\vspace{0.5em}
+	
+	\paragraph{Step 2: Use Scalar Transpose Property}
+	A very important identity is: $s^\top = s$ for any scalar \(s\).
+
+	\[
+	RSS
+	=
+	y^\top y
+	-
+	2w^\top X^\top y
+	+
+	w^\top X^\top X w
+	\]
+	
+	\vspace{0.5em}
+	
+	\paragraph{Step 3: Differentiate with Respect to \(w\)}
+
+	\textbf{Identity 1:}
+	
+	\[
+	\frac{\partial}{\partial w}(a^\top w)
+	=
+	a
+	\]
+	
+	where \(a\) is a constant vector.
+	
+	\vspace{0.5em}
+	
+	\textbf{Identity 2:}
+	
+	\[
+	\frac{\partial}{\partial w}(w^\top A w)
+	=
+	(A + A^\top)w
+	\]
+	
+	where \(A\) is a constant matrix.
+	
+	If \(A\) is symmetric: $A^\top = A $
+	
+	
+	\textbf{First term:}
+	
+	\[
+	\frac{\partial}{\partial w}(y^\top y)=0
+	\]
+	
+	because it does not depend on \(w\).
+	
+	\vspace{0.5em}
+	
+	\textbf{Second term:}
+	
+	\[
+	\frac{\partial}{\partial w}
+	(-2w^\top X^\top y)
+	=
+	-2X^\top y
+	\]
+	
+	\vspace{0.5em}
+	
+	\textbf{Third term:}
+	
+	\[
+	\frac{\partial}{\partial w}
+	(w^\top X^\top X w)
+	\]
+	
+	Let:
+	
+	\[
+	A = X^\top X
+	\]
+	
+	Notice:
+	
+	\[
+	(X^\top X)^\top
+	=
+	X^\top X
+	\]
+	
+	Hence \(X^\top X\) is symmetric.
+	
+	Therefore:
+	
+	\[
+	\frac{\partial}{\partial w}
+	(w^\top X^\top X w)
+	=
+	2X^\top X w
+	\]
+	
+	Combining all terms:
+	
+	\[
+	\frac{\partial RSS}{\partial w}
+	=
+	-2X^\top y
+	+
+	2X^\top X w
+	\]
+	
+	\vspace{0.5em}
+	
+	\paragraph{Step 4: Set Gradient Equal to Zero}
+	
+	\[
+	-2X^\top y
+	+
+	2X^\top X w
+	=
+	0
+	\]
+	
+	Divide both sides by \(2\):
+	
+	\[
+	-X^\top y + X^\top X w = 0
+	\]
+	
+	Rearranging:
+	
+	\[
+	X^\top X w = X^\top y
+	\]
+	
+	These are called the \textbf{Normal Equations}.
+	
+	\vspace{0.5em}
+	
+	\paragraph{Step 5: Solve for \(w\)}
+	
+	If \(X^\top X\) is invertible:
+	
+	\[
+	\boxed{
+	\hat{w}
+	=
+	(X^\top X)^{-1}X^\top y
+	}
+	\]
+	
 
 	\subsection{$X'X$, $(X'X)^{-1}$, and $X'Y$}
 
@@ -280,7 +666,263 @@
 
 	\subsection{Linear Regression Using Gradient Descent}
 
+	\subsubsection{Derivation of Gradient -- Matrix Form}
+	
+	Consider the linear regression model:
+	
+	\[
+	\hat{y}_i = w^\top x_i + b
+	\]
+	
+	where:
+	
+	\[
+	w =
+	\begin{bmatrix}
+	w_1 \\
+	w_2 \\
+	\vdots \\
+	w_d
+	\end{bmatrix},
+	\qquad
+	x_i =
+	\begin{bmatrix}
+	x_{i1} \\
+	x_{i2} \\
+	\vdots \\
+	x_{id}
+	\end{bmatrix}
+	\]
+	
+	The Residual Sum of Squares (RSS) loss is defined as:
+	
+	\[
+	RSS = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
+	\]
+	
+	Substituting the prediction equation:
+	
+	\[
+	RSS
+	=
+	\frac{1}{n}
+	\sum_{i=1}^{n}
+	\left(
+	y_i - (w^\top x_i + b)
+	\right)^2
+	\]
+	
+	We now derive the gradients with respect to the weights and bias.
+	
+	\paragraph{Gradient with Respect to Weight \(w_k\)}
+	
+	We compute:
+	
+	\[
+	\frac{\partial RSS}{\partial w_k}
+	=
+	\frac{\partial}{\partial w_k}
+	\left[
+	\frac{1}{n}
+	\sum_{i=1}^{n}
+	(y_i - \hat{y}_i)^2
+	\right]
+	\]
+	
+	Using linearity of differentiation:
+	
+	\[
+	=
+	\frac{1}{n}
+	\sum_{i=1}^{n}
+	\frac{\partial}{\partial w_k}
+	(y_i - \hat{y}_i)^2
+	\]
+	
+	Using the chain rule:
+	
+	\[
+	\frac{d}{dx}(u^2) = 2u\frac{du}{dx}
+	\]
+	
+	Let:
+	
+	\[
+	u = y_i - \hat{y}_i
+	\]
+	
+	Then:
+	
+	\[
+	=
+	\frac{1}{n}
+	\sum_{i=1}^{n}
+	2(y_i - \hat{y}_i)
+	\frac{\partial}{\partial w_k}(y_i - \hat{y}_i)
+	\]
+	
+	Since \(y_i\) is constant with respect to \(w_k\):
+	
+	\[
+	=
+	-\frac{2}{n}
+	\sum_{i=1}^{n}
+	(y_i - \hat{y}_i)
+	\frac{\partial \hat{y}_i}{\partial w_k}
+	\]
+	
+	Now:
+	
+	\[
+	\hat{y}_i
+	=
+	w_1x_{i1} + w_2x_{i2} + \cdots + w_kx_{ik} + \cdots + b
+	\]
+	
+	Therefore:
+	
+	\[
+	\frac{\partial \hat{y}_i}{\partial w_k}
+	=
+	x_{ik}
+	\]
+	
+	Substituting:
+	
+	\[
+	\boxed{
+	\frac{\partial RSS}{\partial w_k}
+	=
+	-\frac{2}{n}
+	\sum_{i=1}^{n}
+	x_{ik}(y_i - \hat{y}_i)
+	}
+	\]
+	
+	Repeating this for all weights and stacking the results into a vector gives:
+	
+	\[
+	\boxed{
+	\frac{\partial RSS}{\partial w}
+	=
+	-\frac{2}{n}
+	X^\top (y - \hat{y})
+	}
+	\]
+	
+	where:
+	
+	\[
+	X =
+	\begin{bmatrix}
+	x_{11} & x_{12} & \cdots & x_{1d} \\
+	x_{21} & x_{22} & \cdots & x_{2d} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	x_{n1} & x_{n2} & \cdots & x_{nd}
+	\end{bmatrix}
+	\]
+	
+	and:
+	
+	\[
+	y - \hat{y}
+	=
+	\begin{bmatrix}
+	y_1 - \hat{y}_1 \\
+	y_2 - \hat{y}_2 \\
+	\vdots \\
+	y_n - \hat{y}_n
+	\end{bmatrix}
+	\]
+	
+	\paragraph{Gradient with Respect to Bias \(b\)}
+	
+	Now compute:
+	
+	\[
+	\frac{\partial RSS}{\partial b}
+	=
+	\frac{\partial}{\partial b}
+	\left[
+	\frac{1}{n}
+	\sum_{i=1}^{n}
+	(y_i - \hat{y}_i)^2
+	\right]
+	\]
+	
+	Using linearity:
+	
+	\[
+	=
+	\frac{1}{n}
+	\sum_{i=1}^{n}
+	\frac{\partial}{\partial b}
+	(y_i - \hat{y}_i)^2
+	\]
+	
+	Applying the chain rule:
+	
+	\[
+	=
+	\frac{1}{n}
+	\sum_{i=1}^{n}
+	2(y_i - \hat{y}_i)
+	\frac{\partial}{\partial b}(y_i - \hat{y}_i)
+	\]
+	
+	Since \(y_i\) is constant:
+	
+	\[
+	=
+	-\frac{2}{n}
+	\sum_{i=1}^{n}
+	(y_i - \hat{y}_i)
+	\frac{\partial \hat{y}_i}{\partial b}
+	\]
+	
+	From:
+	
+	\[
+	\hat{y}_i = w^\top x_i + b
+	\]
+	
+	we obtain:
+	
+	\[
+	\frac{\partial \hat{y}_i}{\partial b} = 1
+	\]
+	
+	Therefore:
+	
+	\[
+	\boxed{
+	\frac{\partial RSS}{\partial b}
+	=
+	-\frac{2}{n}
+	\sum_{i=1}^{n}
+	(y_i - \hat{y}_i)
+	}
+	\]
+	
+	\paragraph{Important Intuition}
+	
+	The feature values appear in the weight gradient because:
+	
+	\[
+	\frac{\partial \hat{y}_i}{\partial w_k} = x_{ik}
+	\]
+	
+	However, the bias gradient does not contain feature values because:
+	
+	\[
+	\frac{\partial \hat{y}_i}{\partial b} = 1
+	\]
+	
+	Thus, the bias behaves like a parameter multiplied by a constant feature whose value is always \(1\).
+	
 	Gradient Descent provides an iterative optimization approach to estimate the regression coefficients instead of using the closed-form solution $(X^\top X)^{-1}X^\top y$. This is particularly useful when the number of features is very large or when matrix inversion becomes computationally expensive.
+	
+	\subsubsection{Update Rule \& Formula}
 
 	\begin{itemize}
 		\item \textbf{Goal}: Minimize the Residual Sum of Squares (RSS)
@@ -385,6 +1027,11 @@
 			\item Penalizes the sum of squared coefficients.
 			\item Shrinks coefficients smoothly toward zero but never sets them exactly to zero.
 			\item Very useful when predictors are highly correlated.
+			
+			\item Objective : $\min_\beta \|y - X\beta\|^2 + \lambda \|\beta\|^2$
+			 \item Closed Form Solution : $\hat{\beta} = (X^T X + \lambda I)^{-1} X^T y $
+			 \item Gradient Descent Solution : $\nabla = -2X^T (y - X\beta) + 2\lambda \beta$
+			 
 		\end{itemize}
 
 		\item \textbf{Lasso Regression (L1 Regularization)}
@@ -401,6 +1048,9 @@
 			\item Penalizes the sum of absolute values of coefficients.
 			\item Produces sparse models by forcing some coefficients exactly to zero.
 			\item Useful for feature selection.
+			\item Objective : $\min_\beta \|y - X\beta\|^2 + \lambda \|\beta\|_1$
+			\item Closed Form Solution : No closed-form solution
+			\item Gradient (Subgradient) : $\nabla = -2X^T (y - X\beta) + \lambda \, \text{sign}(\beta)$
 		\end{itemize}
 
 		\item \textbf{Elastic Net (Combination of L1 and L2)}
@@ -418,6 +1068,9 @@
 			\item Combines Ridge and Lasso penalties.
 			\item Useful when features are correlated and we also want sparsity.
 			\item More stable than Lasso alone, especially in high-dimensional settings.
+			\item Objective : $\min_\beta \|y - X\beta\|^2 + \lambda_1 \|\beta\|_1 + \lambda_2 \|\beta\|^2$
+			\item Closed Form Solution : No closed-form solution
+			\item Gradient Descent Solution :$\nabla = -2X^T (y - X\beta) + \lambda_1 \text{sign}(\beta) + 2\lambda_2 \beta$
 		\end{itemize}
 
 	\end{itemize}
@@ -500,7 +1153,7 @@
 	\text{Salary} = 200k + 50k(\text{Experience}) + 2k(\text{Hours}) + 30k(\text{Gender}) + 80k(\text{Masters}) + 150k(\text{PhD})
 	\]
 
-	\subsubsection{Interpretation of Coefficients}
+
 	\begin{itemize}
 		\item Intercept ($\beta_0 = 200000$):The intercept represents the predicted salary when all explanatory variables are equal to zero. In this case, it corresponds to a female individual with a Bachelor's degree, zero years of experience, and zero working hours. While not always practically meaningful, it serves as a baseline for the regression model.
 
@@ -649,26 +1302,6 @@
 		\end{itemize}
 
 	\end{itemize}
-
-
-	\subsection{AIC \& BIC Calculation}
-
-	\begin{itemize}
-		\item Both AIC and BIC are model selection criteria designed to choose the best model among several candidates.
-		\item They reward models with good fit (low RSS) but penalize models with too many parameters.
-		\item The key idea: \textbf{a good model explains the data well using as few parameters as possible}.
-		\item AIC is more focused on prediction accuracy, often choosing slightly more complex models.
-		\item BIC imposes a stronger penalty for complexity, often leading to simpler models, especially as sample size $n$ grows.
-		\item Both are especially useful when comparing non-nested models (models that are not subsets of each other).
-		\item Lower AIC/BIC values indicate a better model.
-	\end{itemize}
-	 		\[
-		AIC = n \log\left(\frac{RSS}{n}\right) + 2k
-		\]
-
-		\[
-		BIC = n \log\left(\frac{RSS}{n}\right) + k\log(n)
-		\]
 
 
 	\subsection{Feature Significance - T test}
@@ -921,6 +1554,53 @@
 		\item Measures the overall influence of an observation on the fitted regression coefficients.
 		\item Rule of thumb: $D_i > 1$ indicates potentially influential observations.
 	\end{itemize}
+	
+	\subsection{Leverage}
+	
+	\begin{itemize}
+	    \item Leverage measures how unusual a point’s predictor values are.
+	    
+	    \item A point far away in feature space has high leverage.
+	    
+	    \item Hat matrix:
+	    $$
+	    H = X(X^TX)^{-1}X^T
+	    $$
+	    
+	    \item The diagonal elements of the hat matrix, $h_{ii}$, are called leverage values.
+	    
+	    \item High leverage points correspond to observations with unusual predictor values.
+	    
+	    \item If
+	    $$
+	    h_{ii} > \frac{2p}{n}
+	    $$
+	    then the observation is considered a high leverage point.
+	\end{itemize}
+	
+	\subsection{Cook's Distance}
+	
+	\begin{itemize}
+	    \item Cook's Distance measures how much the fitted model changes if an observation is removed.
+	    
+	    \item It combines residual magnitude and leverage:
+	    $$
+	    D_i =
+	    \frac{e_i^2}{p \cdot MSE}
+	    \cdot
+	    \frac{h_{ii}}{(1-h_{ii})^2}
+	    $$
+	    
+	    \item $e_i$ = residual for observation $i$
+	    
+	    \item $h_{ii}$ = leverage of observation $i$
+	    
+	    \item $p$ = number of parameters (including intercept)
+	    
+	    \item $MSE = \dfrac{RSS}{n-p}$
+	    
+	    \item $D_i > 1$ may indicate a highly influential point.
+	\end{itemize}
 
 	%-----------------------------------------------------------
 	\subsubsection{Scale--Location Plot}
@@ -995,6 +1675,382 @@
 		\item $VIF > 5$: moderate multicollinearity concern.
 		\item $VIF > 10$: severe multicollinearity.
 	\end{itemize}
+	
+	\subsection{Likelihood, AIC, and BIC in Linear Regression}
+	
+	Consider the multiple linear regression model:
+	
+	\[
+	y_i = x_i^\top w + \epsilon_i
+	\]
+	
+	where the error term is assumed to follow a Gaussian distribution:
+	
+	\[
+	\epsilon_i \sim \mathcal{N}(0,\sigma^2)
+	\]
+	
+	This assumption implies:
+	
+	\[
+	y_i \mid x_i
+	\sim
+	\mathcal{N}(x_i^\top w,\sigma^2)
+	\]
+	
+	Thus, each target value is normally distributed around the regression prediction.
+	
+	\vspace{0.5em}
+	
+	\paragraph{Likelihood Function}
+	
+	For a single observation:
+	
+	\[
+	p(y_i \mid x_i,w,\sigma^2)
+	=
+	\frac{1}{\sqrt{2\pi\sigma^2}}
+	\exp
+	\left(
+	-\frac{(y_i-x_i^\top w)^2}{2\sigma^2}
+	\right)
+	\]
+	
+	Assuming observations are independent, the likelihood of the entire dataset becomes:
+	
+	\[
+	L(w,\sigma^2)
+	=
+	\prod_{i=1}^{n}
+	p(y_i \mid x_i,w,\sigma^2)
+	\]
+	
+	Substituting the Gaussian density:
+	
+	\[
+	L(w,\sigma^2)
+	=
+	\prod_{i=1}^{n}
+	\frac{1}{\sqrt{2\pi\sigma^2}}
+	\exp
+	\left(
+	-\frac{(y_i-x_i^\top w)^2}{2\sigma^2}
+	\right)
+	\]
+	
+	\vspace{0.5em}
+	
+	\paragraph{Log-Likelihood}
+	
+	Products are difficult to optimize, so we take logarithms.
+	
+	Using:
+	
+	\[
+	\log(ab)=\log a + \log b
+	\]
+	
+	and:
+	
+	\[
+	\log(e^x)=x
+	\]
+	
+	we obtain:
+	
+	\[
+	\log L
+	=
+	\sum_{i=1}^{n}
+	\log p(y_i \mid x_i,w,\sigma^2)
+	\]
+	
+	Expanding:
+	
+	\[
+	\log L
+	=
+	\sum_{i=1}^{n}
+	\left[
+	\log
+	\left(
+	\frac{1}{\sqrt{2\pi\sigma^2}}
+	\right)
+	-
+	\frac{(y_i-x_i^\top w)^2}{2\sigma^2}
+	\right]
+	\]
+	
+	Using:
+	
+	\[
+	\log
+	\left(
+	\frac{1}{\sqrt{a}}
+	\right)
+	=
+	-\frac12 \log a
+	\]
+	
+	we get:
+	
+	\[
+	\log L
+	=
+	-\frac{n}{2}\log(2\pi\sigma^2)
+	-
+	\frac{1}{2\sigma^2}
+	\sum_{i=1}^{n}
+	(y_i-x_i^\top w)^2
+	\]
+	
+	Separating the logarithm:
+	
+	\[
+	\log(ab)=\log a + \log b
+	\]
+	
+	gives:
+	
+	\[
+	\boxed{
+	\log L
+	=
+	-\frac{n}{2}\log(2\pi)
+	-
+	\frac{n}{2}\log(\sigma^2)
+	-
+	\frac{1}{2\sigma^2}RSS
+	}
+	\]
+	
+	where:
+	
+	\[
+	RSS
+	=
+	\sum_{i=1}^{n}
+	(y_i-\hat{y}_i)^2
+	\]
+	
+	is the Residual Sum of Squares.
+	
+	\vspace{0.5em}
+	
+	\paragraph{Maximum Likelihood Estimate of Variance}
+	
+	The maximum likelihood estimate of the variance is:
+	
+	\[
+	\boxed{
+	\hat{\sigma}^2
+	=
+	\frac{RSS}{n}
+	}
+	\]
+	
+	Substituting this into the log-likelihood:
+	
+	\[
+	\log L
+	=
+	-\frac{n}{2}\log(2\pi)
+	-
+	\frac{n}{2}\log
+	\left(
+	\frac{RSS}{n}
+	\right)
+	-
+	\frac{RSS}{2(RSS/n)}
+	\]
+	
+	Simplifying the final term:
+	
+	\[
+	\frac{RSS}{2(RSS/n)}
+	=
+	\frac{n}{2}
+	\]
+	
+	Thus:
+	
+	\[
+	\log L
+	=
+	-\frac{n}{2}\log(2\pi)
+	-
+	\frac{n}{2}\log
+	\left(
+	\frac{RSS}{n}
+	\right)
+	-
+	\frac{n}{2}
+	\]
+	
+	Factorizing:
+	
+	\[
+	\boxed{
+	\log L
+	=
+	-\frac{n}{2}
+	\left[
+	\log(2\pi)
+	+
+	\log\left(\frac{RSS}{n}\right)
+	+
+	1
+	\right]
+	}
+	\]
+	
+	\vspace{0.5em}
+	
+	\paragraph{Akaike Information Criterion (AIC)}
+	
+	The Akaike Information Criterion is defined as:
+	
+	\[
+	\boxed{
+	AIC = 2k - 2\log L
+	}
+	\]
+	
+	where:
+	
+	\begin{itemize}
+		\item \(k\) = number of estimated parameters
+		\item \(\log L\) = maximized log-likelihood
+	\end{itemize}
+	
+	Substituting the log-likelihood:
+	
+	\[
+	AIC
+	=
+	2k
+	+
+	n
+	\left[
+	\log(2\pi)
+	+
+	\log\left(\frac{RSS}{n}\right)
+	+
+	1
+	\right]
+	\]
+	
+	Rearranging:
+	
+	\[
+	AIC
+	=
+	n\log\left(\frac{RSS}{n}\right)
+	+
+	2k
+	+
+	n\log(2\pi)
+	+
+	n
+	\]
+	
+	Notice that:
+	
+	\[
+	n\log(2\pi)+n
+	\]
+	
+	is constant for all models trained on the same dataset.
+	
+	Since AIC is used for comparing models, constant terms are usually ignored.
+	
+	Thus the simplified practical formula becomes:
+	
+	\[
+	\boxed{
+	AIC
+	=
+	n\log\left(\frac{RSS}{n}\right)
+	+
+	2k
+	}
+	\]
+	
+	\vspace{0.5em}
+	
+	\paragraph{Bayesian Information Criterion (BIC)}
+	
+	The Bayesian Information Criterion is defined as:
+	
+	\[
+	\boxed{
+	BIC
+	=
+	k\log(n)-2\log L
+	}
+	\]
+	
+	Substituting the Gaussian log-likelihood and removing constants gives:
+	
+	\[
+	\boxed{
+	BIC
+	=
+	n\log\left(\frac{RSS}{n}\right)
+	+
+	k\log(n)
+	}
+	\]
+	
+	\vspace{0.5em}
+	
+	\paragraph{Interpretation}
+	
+	Both AIC and BIC balance:
+	
+	\begin{enumerate}
+		\item Goodness of fit
+		\[
+		\text{Lower RSS} \Rightarrow \text{Higher likelihood}
+		\]
+	
+		\item Model complexity
+		\[
+		\text{More parameters} \Rightarrow \text{Higher penalty}
+		\]
+	\end{enumerate}
+	
+	Thus:
+	
+	\begin{itemize}
+		\item Adding predictors usually decreases RSS
+		\item But adding too many predictors increases model complexity
+		\item AIC and BIC penalize unnecessarily complex models
+	\end{itemize}
+	
+	\vspace{0.5em}
+	
+	\paragraph{Difference Between AIC and BIC}
+	
+	\[
+	AIC = 2k - 2\log L
+	\]
+	
+	\[
+	BIC = k\log(n) - 2\log L
+	\]
+	
+	Since:
+	
+	\[
+	\log(n) > 2
+	\quad \text{for sufficiently large } n
+	\]
+	
+	BIC usually applies a stronger penalty than AIC and therefore tends to prefer simpler models.
+	
+	
+	\newpage
 
 	\section{Logistic Regression}
 
@@ -1397,7 +2453,224 @@
 	\[
 	\text{Logistic regression: } \hat{y} = \sigma(Xw+b)
 	\]
-
+	
+	\subsection{Standard Errors of Logistic Regression Coefficients}
+	
+	\begin{itemize}
+	    \item Coefficients are estimated using \textbf{Maximum Likelihood Estimation (MLE)}.
+	    
+	    \item Hessian / Fisher Information Matrix:
+	    $$
+	    H = X^T W X
+	    $$
+	    
+	    \item Weight matrix:
+	    $$
+	    W = \mathrm{diag}(p_i(1-p_i))
+	    $$
+	    
+	    \item Covariance matrix of coefficients:
+	    $$
+	    \mathrm{Cov}(\hat{\beta}) = (X^T W X)^{-1}
+	    $$
+	    
+	    \item Standard error of coefficient $\hat{\beta}_j$ is given by:
+	    $$
+	    SE(\hat{\beta}_j)=\sqrt{\left[(X^T W X)^{-1}\right]_{jj}}
+	    $$
+	    
+	    \item Standard errors quantify uncertainty in coefficient estimates.
+	    
+	    \item Used in Wald Test, confidence intervals, and p-value computation.
+	\end{itemize}
+	
+	\subsection{Hypothesis Testing \& Likelihood Ratio Test}
+	
+	\begin{itemize}
+	    \item \textbf{Wald Test}: Most common coefficient significance test.
+	    $$
+	    z = \frac{\hat{\beta}_j}{SE(\hat{\beta}_j)}
+	    $$
+	    
+	    Under $H_0$:
+	    $$
+	    z \sim N(0,1)
+	    $$
+	    
+	    Equivalent chi-square form:
+	    $$
+	    z^2 \sim \chi^2_1
+	    $$
+	    
+	    \item \textbf{Likelihood Ratio Test} for overall model significance:
+	    $$
+	    H_0:\beta_1 = \beta_2 = \cdots = \beta_p = 0
+	    $$
+	    
+	    \item In this test, we compare the null model (intercept only) with the full model.
+	    
+	    \item Likelihood Ratio Statistic is given by:
+	    $$
+	    LR=-2\left[\log L_0 - \log L_1\right]
+	    $$
+	    
+	    \item Under $H_0$:
+	    $$
+	    LR \sim \chi^2_k
+	    $$
+	    where $k$ is the number of predictors added.
+	\end{itemize}
+	
+	
+	\subsection{Leverage}
+	
+	\begin{itemize}
+	    \item Leverage measures how unusual an observation's predictor values are.
+	    
+	    \item Leverage matrix:
+	    $$
+	    H = W^{1/2}X(X^T W X)^{-1}X^T W^{1/2}
+	    $$
+	    
+	    \item Leverage values are diagonal elements:
+	    $$
+	    h_i = H_{ii}
+	    $$
+	    
+	    \item High leverage points can strongly influence model fitting.
+	\end{itemize}
+	
+	
+	
+	\subsection{Cook's Distance}
+	
+	\begin{itemize}
+	    \item \textbf{Cook's Distance}:
+	    $$
+	    D_i =
+	    \frac{
+	    r_i^2 h_i
+	    }{
+	    p(1-h_i)^2
+	    }
+	    $$
+	    
+	    \item $r_i$ = standardized residual
+	    
+	    \item $h_i$ = leverage
+	    
+	    \item $p$ = number of parameters
+	    
+	    \item Large Cook's Distance indicates influential observations.
+	    
+	    \item Common threshold:
+	    $$
+	    D_i > \frac{4}{n}
+	    $$
+	    where $n$ is the number of observations.
+	\end{itemize}
+	
+	\subsection{Goodness of Fit in Logistic Regression}
+	
+	\begin{itemize}
+	    \item Goodness of fit measures how well the model explains observed outcomes.
+	    
+	    \item Residual Deviance is the primary likelihood-based fit metric:
+	    $$
+	    D = -2(\log L_{\text{model}} - \log L_{\text{saturated}})
+	    $$
+	    
+	    \item Lower deviance indicates better model fit.
+	    
+	    \item \textbf{Hosmer--Lemeshow Test} compares observed vs predicted probabilities across groups.
+	    
+	    \item Hypotheses:
+	    $$
+	    H_0 : \text{Model fits data well}
+	    $$
+	    $$
+	    H_1 : \text{Model does not fit data well}
+	    $$
+	    
+	    \item Hosmer--Lemeshow test statistic:
+	    $$
+	    HL =
+	    \sum_{g=1}^{G}
+	    \left(
+	    \frac{(O_{1g}-E_{1g})^2}{E_{1g}}
+	    +
+	    \frac{(O_{0g}-E_{0g})^2}{E_{0g}}
+	    \right)
+	    $$
+	    
+	    \item Test statistic approximately follows:
+	    $$
+	    HL \sim \chi^2_{g-2}
+	    $$
+	    where $g$ is the number of groups.
+	    
+	    \item Large p-value $(>0.05)$ indicates good fit, whereas small p-value $(<0.05)$ indicates poor fit.
+	\end{itemize}
+	
+	
+	\subsection{McFadden $R^2$ in Logistic Regression}
+	
+	\begin{itemize}
+	    \item Logistic regression has no true variance-based $R^2$.
+	    
+	    \item McFadden $R^2$ is a likelihood-based pseudo $R^2$ measure.
+	    
+	    $$
+	    R^2_{\text{McFadden}}
+	    =
+	    1 -
+	    \frac{
+	    \log L_{\text{full}}
+	    }{
+	    \log L_{\text{null}}
+	    }
+	    $$
+	    
+	    \item $\log L_{\text{full}}$ = log-likelihood of fitted model
+	    
+	    \item $\log L_{\text{null}}$ = log-likelihood of intercept-only model
+	    
+	    \item Larger values indicate better model fit.
+	    
+	    \item Typical good values lie between $0.2 - 0.4$.
+	    
+	    \item Uses the same likelihood principle as the Likelihood Ratio Test.
+	\end{itemize}
+	
+	
+	\subsection{Box--Tidwell Test (Linearity of Log-Odds)}
+	
+	\begin{itemize}
+	    \item Used to check whether predictors have a linear relationship with log-odds in logistic regression.
+	    
+	    \item For predictor $x$, create interaction term:
+	    $$
+	    x \log(x)
+	    $$
+	    
+	    \item Extended logistic regression model:
+	    $$
+	    \log\left(\frac{p}{1-p}\right)=\beta_0 + \beta_1 x + \beta_2 x\log(x)
+	    $$
+	    
+	    \item Hypotheses:
+	    $$
+	    H_0 : \beta_2 = 0
+	    $$
+	    $$
+	    H_1 : \beta_2 \neq 0
+	    $$
+	    
+	    \item Applied separately for each continuous predictor.
+	\end{itemize}
+	
+	
+	\newpage 
 	\section{Classification Evaluation Metrics}
 
 	Evaluation metrics help measure how well a classification model performs.

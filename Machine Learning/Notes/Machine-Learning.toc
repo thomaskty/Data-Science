@@ -1,244 +1,271 @@
-\contentsline {section}{\numberline {1}Linear Regression}{5}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Simple Linear Regression}{5}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Correlation and Covariance}{5}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Multiple Linear Regression}{5}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}$X'X$, $(X'X)^{-1}$, and $X'Y$}{6}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Linear Regression Using Gradient Descent}{6}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Regularization: Ridge, Lasso, and Elastic Net}{7}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Standard Errors of Estimates}{8}{subsection.1.7}%
-\contentsline {subsection}{\numberline {1.8}Estimate of the sd of the error term : RSE}{8}{subsection.1.8}%
-\contentsline {subsection}{\numberline {1.9}Coefficient Interpretation - Example}{8}{subsection.1.9}%
-\contentsline {subsubsection}{\numberline {1.9.1}Interpretation of Coefficients}{9}{subsubsection.1.9.1}%
-\contentsline {subsubsection}{\numberline {1.9.2}Effect of Changing Units}{9}{subsubsection.1.9.2}%
-\contentsline {subsection}{\numberline {1.10}R\textsuperscript {2} Statistics}{9}{subsection.1.10}%
-\contentsline {subsection}{\numberline {1.11}Metrics from L-P Norm}{10}{subsection.1.11}%
-\contentsline {subsection}{\numberline {1.12}Huber Loss}{10}{subsection.1.12}%
-\contentsline {subsection}{\numberline {1.13}Adjusted R\textsuperscript {2}}{10}{subsection.1.13}%
-\contentsline {subsection}{\numberline {1.14}AIC \& BIC Calculation}{11}{subsection.1.14}%
-\contentsline {subsection}{\numberline {1.15}Feature Significance - T test}{11}{subsection.1.15}%
-\contentsline {subsection}{\numberline {1.16}Overall Significance - F Test}{11}{subsection.1.16}%
-\contentsline {subsection}{\numberline {1.17}Confidence Intervals of the estimates}{12}{subsection.1.17}%
-\contentsline {subsection}{\numberline {1.18}OLS Violations}{12}{subsection.1.18}%
-\contentsline {subsubsection}{\numberline {1.18.1}Multicollinearity}{12}{subsubsection.1.18.1}%
-\contentsline {subsubsection}{\numberline {1.18.2}Heteroskedasticity}{12}{subsubsection.1.18.2}%
-\contentsline {subsubsection}{\numberline {1.18.3}Non-Normality of Errors}{12}{subsubsection.1.18.3}%
-\contentsline {subsubsection}{\numberline {1.18.4}Serial Correlation (Autocorrelation)}{13}{subsubsection.1.18.4}%
-\contentsline {subsection}{\numberline {1.19}Residual Diagnostics}{13}{subsection.1.19}%
-\contentsline {subsubsection}{\numberline {1.19.1}Q--Q Plot (Quantile--Quantile)}{13}{subsubsection.1.19.1}%
-\contentsline {subsubsection}{\numberline {1.19.2}Shapiro--Wilk Test for Normality}{13}{subsubsection.1.19.2}%
-\contentsline {subsubsection}{\numberline {1.19.3}Kolmogorov--Smirnov Test for Normality}{13}{subsubsection.1.19.3}%
-\contentsline {subsubsection}{\numberline {1.19.4}Anderson--Darling Test for Normality}{13}{subsubsection.1.19.4}%
-\contentsline {subsubsection}{\numberline {1.19.5}One-Sample t-test: Mean of Residuals = 0}{14}{subsubsection.1.19.5}%
-\contentsline {subsubsection}{\numberline {1.19.6}Leverage and Influence (Leverage Plot)}{14}{subsubsection.1.19.6}%
-\contentsline {subsubsection}{\numberline {1.19.7}Scale--Location Plot}{14}{subsubsection.1.19.7}%
-\contentsline {subsubsection}{\numberline {1.19.8}Breusch--Pagan Test for Homoscedasticity}{14}{subsubsection.1.19.8}%
-\contentsline {subsubsection}{\numberline {1.19.9}Durbin--Watson Test for Autocorrelation}{14}{subsubsection.1.19.9}%
-\contentsline {subsubsection}{\numberline {1.19.10}Variance Inflation Factor (VIF): Multicollinearity}{14}{subsubsection.1.19.10}%
-\contentsline {section}{\numberline {2}Logistic Regression}{15}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Linking Functions}{15}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Parameter Estimation using MLE}{16}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Interpretations of the coefficients}{17}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Key Logistic Assumptions}{17}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Odds, log-odds, odds ratio - Interpretations}{17}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Logistic \& Linear Regression Have the Same Gradient Form}{18}{subsection.2.6}%
-\contentsline {paragraph}{Linear Regression}{18}{paragraph*.2}%
-\contentsline {paragraph}{Logistic Regression}{18}{paragraph*.3}%
-\contentsline {section}{\numberline {3}Classification Evaluation Metrics}{19}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Confusion Matrix}{19}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Accuracy}{20}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Precision}{20}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Recall (Sensitivity / True Positive Rate)}{20}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Specificity (True Negative Rate)}{20}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}False Positive and False Negative Rates}{20}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}F-Score}{20}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}ROC Curve}{21}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}AUC (Area Under the ROC Curve)}{21}{subsection.3.9}%
-\contentsline {subsection}{\numberline {3.10}Gini Coefficient}{21}{subsection.3.10}%
-\contentsline {subsection}{\numberline {3.11}Multi-Class Confusion Matrix}{22}{subsection.3.11}%
-\contentsline {subsection}{\numberline {3.12}Micro, Macro, and Weighted Averages}{22}{subsection.3.12}%
-\contentsline {subsection}{\numberline {3.13}KS Statistic (Kolmogorov--Smirnov)}{22}{subsection.3.13}%
-\contentsline {subsection}{\numberline {3.14}Focal Loss}{23}{subsection.3.14}%
-\contentsline {section}{\numberline {4}Bias--Variance Tradeoff}{23}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Core Idea}{23}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Definitions}{23}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Bias--Variance Decomposition}{23}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Trade-off:}{23}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Isolation Forest}{23}{section.5}%
-\contentsline {subsection}{\numberline {5.1}subsampling in Isolation Forest}{25}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Hyperparameters}{25}{subsection.5.2}%
-\contentsline {section}{\numberline {6}K-Nearest Neighbors (KNN)}{25}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Core Idea}{25}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Choosing $k$}{25}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Distance Metrics}{26}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Naive Bayes}{26}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Core Idea}{26}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Naive Conditional Independence}{26}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Estimating Priors}{27}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Common Likelihood Models}{27}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Support Vector Machines (SVM)}{28}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Hard-Margin Optimization}{28}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Soft-Margin SVM}{28}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Lagrangian and Support Vectors}{28}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Decision Function}{28}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Hinge Loss}{29}{subsection.8.5}%
-\contentsline {subsection}{\numberline {8.6}Primal \& Dual Form of SVM}{29}{subsection.8.6}%
-\contentsline {subsubsection}{\numberline {8.6.1}Primal Form}{29}{subsubsection.8.6.1}%
-\contentsline {paragraph}{Interpretation:}{29}{paragraph*.4}%
-\contentsline {paragraph}{Geometric Insight:}{29}{paragraph*.5}%
-\contentsline {subsubsection}{\numberline {8.6.2}Dual Form}{29}{subsubsection.8.6.2}%
-\contentsline {paragraph}{Recovering Primal Variables:}{29}{paragraph*.6}%
-\contentsline {paragraph}{Key Observation:}{29}{paragraph*.7}%
-\contentsline {subsubsection}{\numberline {8.6.3}Difference Between Primal and Dual}{29}{subsubsection.8.6.3}%
-\contentsline {subsubsection}{\numberline {8.6.4}When to Use Which?}{30}{subsubsection.8.6.4}%
-\contentsline {subsection}{\numberline {8.7}Kernel Trick}{30}{subsection.8.7}%
-\contentsline {section}{\numberline {9}Decision Tree Algorithm}{31}{section.9}%
-\contentsline {subsection}{\numberline {9.1}CART Algorithm}{32}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Stopping Criteria}{32}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Merits of Decision Trees}{32}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Demerits of Decision Trees}{32}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Properties of Decision Trees}{33}{subsection.9.5}%
-\contentsline {subsection}{\numberline {9.6}Pre-Pruning Decision Trees}{33}{subsection.9.6}%
-\contentsline {subsection}{\numberline {9.7}Cost - Complexity Pruning ( Post-Pruning)}{33}{subsection.9.7}%
-\contentsline {section}{\numberline {10}Ensemble Methods}{34}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Bagging}{34}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Boosting}{34}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Stacking}{34}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}Voting}{35}{subsection.10.4}%
-\contentsline {section}{\numberline {11}Random Forest}{35}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Out-of-Bag Score (OOB Score)}{35}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Feature Importance}{36}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Proximity Matrix}{36}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}Hyperparameters of Random Forest}{36}{subsection.11.4}%
-\contentsline {section}{\numberline {12}Adaboost Algorithm}{36}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Algorithm}{37}{subsection.12.1}%
-\contentsline {section}{\numberline {13}Gradient Boosting}{37}{section.13}%
-\contentsline {section}{\numberline {14}XGBoost}{38}{section.14}%
-\contentsline {section}{\numberline {15}Catboost lgbm}{39}{section.15}%
-\contentsline {section}{\numberline {16}Clustering Evaluation}{40}{section.16}%
-\contentsline {subsection}{\numberline {16.1}Silhouette Score}{40}{subsection.16.1}%
-\contentsline {section}{\numberline {17}KMeans Clustering}{40}{section.17}%
-\contentsline {subsection}{\numberline {17.1}K-Means has local minima}{41}{subsection.17.1}%
-\contentsline {subsection}{\numberline {17.2}Variance Decomposition}{41}{subsection.17.2}%
-\contentsline {subsection}{\numberline {17.3}Computational Complexity}{41}{subsection.17.3}%
-\contentsline {subsection}{\numberline {17.4}K-Means ++}{41}{subsection.17.4}%
-\contentsline {subsection}{\numberline {17.5}K-Means Through the Expectation-Maximization Lens}{42}{subsection.17.5}%
-\contentsline {paragraph}{Expectation Step}{42}{paragraph*.8}%
-\contentsline {paragraph}{Maximization Step}{42}{paragraph*.9}%
-\contentsline {subsection}{\numberline {17.6}Comparison of K-Means \& GMM in terms of EM Algorithm}{42}{subsection.17.6}%
-\contentsline {subsection}{\numberline {17.7}K-Medoid : When the Center Must be a real point}{43}{subsection.17.7}%
-\contentsline {subsection}{\numberline {17.8}K-Modes ( For categorical data)}{43}{subsection.17.8}%
-\contentsline {subsection}{\numberline {17.9}K-Prototype( Numeric + Categorical)}{43}{subsection.17.9}%
-\contentsline {subsection}{\numberline {17.10}Assumptions of KMeans}{43}{subsection.17.10}%
-\contentsline {section}{\numberline {18}DBSCAN}{44}{section.18}%
-\contentsline {subsection}{\numberline {18.1}Key Parameters}{44}{subsection.18.1}%
-\contentsline {subsection}{\numberline {18.2}Types of Points}{44}{subsection.18.2}%
-\contentsline {subsection}{\numberline {18.3}Density Reachability}{44}{subsection.18.3}%
-\contentsline {subsection}{\numberline {18.4}Density Connectivity}{44}{subsection.18.4}%
-\contentsline {subsection}{\numberline {18.5}DBSCAN Algorithm}{44}{subsection.18.5}%
-\contentsline {subsection}{\numberline {18.6}Choosing $\epsilon $}{44}{subsection.18.6}%
-\contentsline {subsection}{\numberline {18.7}Advantages}{45}{subsection.18.7}%
-\contentsline {subsection}{\numberline {18.8}Limitations}{45}{subsection.18.8}%
-\contentsline {section}{\numberline {19}Hierarchical Clustering}{45}{section.19}%
-\contentsline {subsection}{\numberline {19.1}Basic Idea}{45}{subsection.19.1}%
-\contentsline {subsection}{\numberline {19.2}Distance Metrics and Linkage Criteria}{45}{subsection.19.2}%
-\contentsline {subsection}{\numberline {19.3}Agglomerative Clustering Algorithm}{45}{subsection.19.3}%
-\contentsline {subsection}{\numberline {19.4}Dendrogram}{46}{subsection.19.4}%
-\contentsline {subsection}{\numberline {19.5}Ward's Method (Discussion)}{46}{subsection.19.5}%
-\contentsline {subsection}{\numberline {19.6}Advantages}{46}{subsection.19.6}%
-\contentsline {subsection}{\numberline {19.7}Limitations}{46}{subsection.19.7}%
-\contentsline {section}{\numberline {20}Gaussian Mixture Models}{46}{section.20}%
-\contentsline {subsection}{\numberline {20.1}Hard vs Soft Clustering}{46}{subsection.20.1}%
-\contentsline {subsection}{\numberline {20.2}The Latent Variable Problem}{47}{subsection.20.2}%
-\contentsline {subsection}{\numberline {20.3}Expectation-Maximization (EM) Algorithm}{47}{subsection.20.3}%
-\contentsline {paragraph}{Expectation Step (E-Step)}{47}{paragraph*.10}%
-\contentsline {paragraph}{Maximization Step (M-Step)}{47}{paragraph*.11}%
-\contentsline {subsection}{\numberline {20.4}Intuition Behind EM}{47}{subsection.20.4}%
-\contentsline {subsection}{\numberline {20.5}Interpretation}{48}{subsection.20.5}%
-\contentsline {section}{\numberline {21}Model Explainability}{48}{section.21}%
-\contentsline {subsection}{\numberline {21.1}Shapley Values}{48}{subsection.21.1}%
-\contentsline {subsubsection}{\numberline {21.1.1}Attributing payout to each player}{48}{subsubsection.21.1.1}%
-\contentsline {subsubsection}{\numberline {21.1.2}Shapley values in Machine Learning}{48}{subsubsection.21.1.2}%
-\contentsline {subsubsection}{\numberline {21.1.3}Shapley Axioms}{48}{subsubsection.21.1.3}%
-\contentsline {subsubsection}{\numberline {21.1.4}Prediction decomposition:}{48}{subsubsection.21.1.4}%
-\contentsline {subsection}{\numberline {21.2}LIME}{49}{subsection.21.2}%
-\contentsline {paragraph}{Local Interpretable Model-Agnostic Explanations}{49}{paragraph*.12}%
-\contentsline {subsubsection}{\numberline {21.2.1}LIME Algorithm}{49}{subsubsection.21.2.1}%
-\contentsline {subsubsection}{\numberline {21.2.2}Submodular Pick Algorithm}{49}{subsubsection.21.2.2}%
-\contentsline {subsubsection}{\numberline {21.2.3}Advantages / Disadvantages}{49}{subsubsection.21.2.3}%
-\contentsline {subsection}{\numberline {21.3}Partial Dependency Plot}{50}{subsection.21.3}%
-\contentsline {subsection}{\numberline {21.4}ICE - Individual Conditional Expectation Plot}{50}{subsection.21.4}%
-\contentsline {section}{\numberline {22}Model Calibration}{51}{section.22}%
-\contentsline {subsection}{\numberline {22.1}Steps in Model Calibration}{51}{subsection.22.1}%
-\contentsline {subsection}{\numberline {22.2}Brier Score Loss}{51}{subsection.22.2}%
-\contentsline {subsection}{\numberline {22.3}Platt Scaling}{51}{subsection.22.3}%
-\contentsline {subsection}{\numberline {22.4}Isotonic Regression}{52}{subsection.22.4}%
-\contentsline {subsubsection}{\numberline {22.4.1}Why We Need Isotonic Regression}{52}{subsubsection.22.4.1}%
-\contentsline {subsubsection}{\numberline {22.4.2}What Isotonic Regression Does}{52}{subsubsection.22.4.2}%
-\contentsline {subsubsection}{\numberline {22.4.3}Block Averaging Idea}{52}{subsubsection.22.4.3}%
-\contentsline {subsubsection}{\numberline {22.4.4}Pool-Adjacent-Violators (PAV) Algorithm}{52}{subsubsection.22.4.4}%
-\contentsline {subsubsection}{\numberline {22.4.5}Interpretation}{53}{subsubsection.22.4.5}%
-\contentsline {subsubsection}{\numberline {22.4.6}Numeric Example : Isotonic Regression}{53}{subsubsection.22.4.6}%
-\contentsline {subsection}{\numberline {22.5}Platt or Isotonic Regression ?}{53}{subsection.22.5}%
-\contentsline {section}{\numberline {23}Feature Selection}{54}{section.23}%
-\contentsline {subsection}{\numberline {23.1}Filter Methods}{54}{subsection.23.1}%
-\contentsline {subsubsection}{\numberline {23.1.1}Mutual Information}{54}{subsubsection.23.1.1}%
-\contentsline {subsubsection}{\numberline {23.1.2}ANOVA For Feature Selection}{54}{subsubsection.23.1.2}%
-\contentsline {subsubsection}{\numberline {23.1.3}Variation Inflation Factor - VIF}{55}{subsubsection.23.1.3}%
-\contentsline {subsubsection}{\numberline {23.1.4}Weight of Evidence}{55}{subsubsection.23.1.4}%
-\contentsline {subsubsection}{\numberline {23.1.5}Chi-Square Test of Independence}{55}{subsubsection.23.1.5}%
-\contentsline {subsection}{\numberline {23.2}Wrapper Methods in Feature Selection}{56}{subsection.23.2}%
-\contentsline {subsubsection}{\numberline {23.2.1}Forward Selection}{56}{subsubsection.23.2.1}%
-\contentsline {subsubsection}{\numberline {23.2.2}Backward Elimination}{56}{subsubsection.23.2.2}%
-\contentsline {subsubsection}{\numberline {23.2.3}Stepwise Selection}{56}{subsubsection.23.2.3}%
-\contentsline {subsubsection}{\numberline {23.2.4}Recursive Feature Elimination}{56}{subsubsection.23.2.4}%
-\contentsline {subsubsection}{\numberline {23.2.5}Rfecv Algorithm}{57}{subsubsection.23.2.5}%
-\contentsline {subsection}{\numberline {23.3}Embedded Methods in Feature Selection}{57}{subsection.23.3}%
-\contentsline {subsubsection}{\numberline {23.3.1}Lasso - L1 Regularisation}{57}{subsubsection.23.3.1}%
-\contentsline {subsubsection}{\numberline {23.3.2}Tree Methods}{57}{subsubsection.23.3.2}%
-\contentsline {subsection}{\numberline {23.4}Tree-based Feature Importance}{57}{subsection.23.4}%
-\contentsline {subsection}{\numberline {23.5}Permutation Feature Importance}{58}{subsection.23.5}%
-\contentsline {subsection}{\numberline {23.6}Drop-column}{58}{subsection.23.6}%
-\contentsline {section}{\numberline {24}Information Theory Concepts}{59}{section.24}%
-\contentsline {subsection}{\numberline {24.1}Entropy}{59}{subsection.24.1}%
-\contentsline {subsection}{\numberline {24.2}Cross Entropy Loss}{59}{subsection.24.2}%
-\contentsline {subsection}{\numberline {24.3}Joint Entropy}{59}{subsection.24.3}%
-\contentsline {subsection}{\numberline {24.4}Mutual Information}{59}{subsection.24.4}%
-\contentsline {subsection}{\numberline {24.5}KL Kullback-Leibler Divergence}{60}{subsection.24.5}%
-\contentsline {subsection}{\numberline {24.6}Population Stability Index}{60}{subsection.24.6}%
-\contentsline {subsection}{\numberline {24.7}Identities and Inequalities}{60}{subsection.24.7}%
-\contentsline {section}{\numberline {25}Principal Component Analysis (PCA)}{61}{section.25}%
-\contentsline {subsection}{\numberline {25.1}Goal and Intuition}{61}{subsection.25.1}%
-\contentsline {subsection}{\numberline {25.2}Steps of PCA}{62}{subsection.25.2}%
-\contentsline {subsection}{\numberline {25.3}Eigenvectors and Eigenvalues}{62}{subsection.25.3}%
-\contentsline {subsection}{\numberline {25.4}Explained Variance}{62}{subsection.25.4}%
-\contentsline {subsection}{\numberline {25.5}Covariance Matrix and Positive Semi-Definite Property}{62}{subsection.25.5}%
-\contentsline {subsection}{\numberline {25.6}Why Covariance Matrices are PSD}{62}{subsection.25.6}%
-\contentsline {subsection}{\numberline {25.7}Connection to Singular Value Decomposition (SVD)}{63}{subsection.25.7}%
-\contentsline {section}{\numberline {26}Recommendation Systems}{63}{section.26}%
-\contentsline {subsection}{\numberline {26.1}Goal of Recommendation Systems}{63}{subsection.26.1}%
-\contentsline {subsection}{\numberline {26.2}Main Types of Recommendation Systems}{63}{subsection.26.2}%
-\contentsline {subsection}{\numberline {26.3}Content-Based Filtering}{63}{subsection.26.3}%
-\contentsline {subsection}{\numberline {26.4}Collaborative Filtering}{64}{subsection.26.4}%
-\contentsline {subsubsection}{\numberline {26.4.1}User-Based Collaborative Filtering}{64}{subsubsection.26.4.1}%
-\contentsline {subsubsection}{\numberline {26.4.2}Item-Based Collaborative Filtering}{64}{subsubsection.26.4.2}%
-\contentsline {subsubsection}{\numberline {26.4.3}Matrix Factorization}{65}{subsubsection.26.4.3}%
-\contentsline {subsection}{\numberline {26.5}Hybrid Methods}{65}{subsection.26.5}%
-\contentsline {subsection}{\numberline {26.6}Metrics for Recommendation Systems}{66}{subsection.26.6}%
-\contentsline {section}{\numberline {27}Methods/Techniques in Machine Learning}{68}{section.27}%
-\contentsline {subsection}{\numberline {27.1}Handling Missing Values}{68}{subsection.27.1}%
-\contentsline {paragraph}{Simple methods}{68}{paragraph*.13}%
-\contentsline {paragraph}{Model-based methods}{68}{paragraph*.14}%
-\contentsline {paragraph}{Important practice}{68}{paragraph*.15}%
-\contentsline {subsection}{\numberline {27.2}Data Leakage}{68}{subsection.27.2}%
-\contentsline {subsection}{\numberline {27.3}Cross Validation Algorithm}{68}{subsection.27.3}%
-\contentsline {subsubsection}{\numberline {27.3.1}Holdout Validation}{68}{subsubsection.27.3.1}%
-\contentsline {subsubsection}{\numberline {27.3.2}Leave-One-Out Cross Validation (LOOCV)}{69}{subsubsection.27.3.2}%
-\contentsline {subsubsection}{\numberline {27.3.3}Leave-\(p\)-Out Cross Validation}{69}{subsubsection.27.3.3}%
-\contentsline {subsubsection}{\numberline {27.3.4}Repeated Cross Validation}{69}{subsubsection.27.3.4}%
-\contentsline {subsubsection}{\numberline {27.3.5}Stratified Cross Validation}{69}{subsubsection.27.3.5}%
-\contentsline {subsubsection}{\numberline {27.3.6}Time Series Cross Validation}{69}{subsubsection.27.3.6}%
-\contentsline {subsubsection}{\numberline {27.3.7}k -fold}{69}{subsubsection.27.3.7}%
-\contentsline {subsection}{\numberline {27.4}Class Imbalance}{70}{subsection.27.4}%
-\contentsline {subsection}{\numberline {27.5}Encoding Strategies}{70}{subsection.27.5}%
-\contentsline {subsection}{\numberline {27.6}Feature Transformations}{70}{subsection.27.6}%
-\contentsline {subsection}{\numberline {27.7}Model Monitoring}{71}{subsection.27.7}%
+\contentsline {section}{\numberline {1}Linear Regression}{6}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Simple Linear Regression}{6}{subsection.1.1}%
+\contentsline {paragraph}{Step 1: Differentiate with respect to \(\beta _0\)}{6}{paragraph*.2}%
+\contentsline {paragraph}{Step 2: Differentiate with respect to \(\beta _1\)}{6}{paragraph*.3}%
+\contentsline {subsection}{\numberline {1.2}Correlation and Covariance}{7}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Multiple Linear Regression}{8}{subsection.1.3}%
+\contentsline {paragraph}{Step 1: Expand the Quadratic Form}{8}{paragraph*.4}%
+\contentsline {paragraph}{Step 2: Use Scalar Transpose Property}{8}{paragraph*.5}%
+\contentsline {paragraph}{Step 3: Differentiate with Respect to \(w\)}{9}{paragraph*.6}%
+\contentsline {paragraph}{Step 4: Set Gradient Equal to Zero}{9}{paragraph*.7}%
+\contentsline {paragraph}{Step 5: Solve for \(w\)}{10}{paragraph*.8}%
+\contentsline {subsection}{\numberline {1.4}$X'X$, $(X'X)^{-1}$, and $X'Y$}{10}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Linear Regression Using Gradient Descent}{10}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Derivation of Gradient -- Matrix Form}{10}{subsubsection.1.5.1}%
+\contentsline {paragraph}{Gradient with Respect to Weight \(w_k\)}{11}{paragraph*.9}%
+\contentsline {paragraph}{Gradient with Respect to Bias \(b\)}{12}{paragraph*.10}%
+\contentsline {paragraph}{Important Intuition}{12}{paragraph*.11}%
+\contentsline {subsubsection}{\numberline {1.5.2}Update Rule \& Formula}{13}{subsubsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.6}Regularization: Ridge, Lasso, and Elastic Net}{13}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Standard Errors of Estimates}{14}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Estimate of the sd of the error term : RSE}{15}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Coefficient Interpretation - Example}{15}{subsection.1.9}%
+\contentsline {subsubsection}{\numberline {1.9.1}Effect of Changing Units}{15}{subsubsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.10}R\textsuperscript {2} Statistics}{16}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Metrics from L-P Norm}{16}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}Huber Loss}{16}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Adjusted R\textsuperscript {2}}{17}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}Feature Significance - T test}{17}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Overall Significance - F Test}{17}{subsection.1.15}%
+\contentsline {subsection}{\numberline {1.16}Confidence Intervals of the estimates}{18}{subsection.1.16}%
+\contentsline {subsection}{\numberline {1.17}OLS Violations}{18}{subsection.1.17}%
+\contentsline {subsubsection}{\numberline {1.17.1}Multicollinearity}{18}{subsubsection.1.17.1}%
+\contentsline {subsubsection}{\numberline {1.17.2}Heteroskedasticity}{18}{subsubsection.1.17.2}%
+\contentsline {subsubsection}{\numberline {1.17.3}Non-Normality of Errors}{18}{subsubsection.1.17.3}%
+\contentsline {subsubsection}{\numberline {1.17.4}Serial Correlation (Autocorrelation)}{19}{subsubsection.1.17.4}%
+\contentsline {subsection}{\numberline {1.18}Residual Diagnostics}{19}{subsection.1.18}%
+\contentsline {subsubsection}{\numberline {1.18.1}Q--Q Plot (Quantile--Quantile)}{19}{subsubsection.1.18.1}%
+\contentsline {subsubsection}{\numberline {1.18.2}Shapiro--Wilk Test for Normality}{19}{subsubsection.1.18.2}%
+\contentsline {subsubsection}{\numberline {1.18.3}Kolmogorov--Smirnov Test for Normality}{19}{subsubsection.1.18.3}%
+\contentsline {subsubsection}{\numberline {1.18.4}Anderson--Darling Test for Normality}{19}{subsubsection.1.18.4}%
+\contentsline {subsubsection}{\numberline {1.18.5}One-Sample t-test: Mean of Residuals = 0}{20}{subsubsection.1.18.5}%
+\contentsline {subsubsection}{\numberline {1.18.6}Leverage and Influence (Leverage Plot)}{20}{subsubsection.1.18.6}%
+\contentsline {subsection}{\numberline {1.19}Leverage}{20}{subsection.1.19}%
+\contentsline {subsection}{\numberline {1.20}Cook's Distance}{20}{subsection.1.20}%
+\contentsline {subsubsection}{\numberline {1.20.1}Scale--Location Plot}{20}{subsubsection.1.20.1}%
+\contentsline {subsubsection}{\numberline {1.20.2}Breusch--Pagan Test for Homoscedasticity}{20}{subsubsection.1.20.2}%
+\contentsline {subsubsection}{\numberline {1.20.3}Durbin--Watson Test for Autocorrelation}{21}{subsubsection.1.20.3}%
+\contentsline {subsubsection}{\numberline {1.20.4}Variance Inflation Factor (VIF): Multicollinearity}{21}{subsubsection.1.20.4}%
+\contentsline {subsection}{\numberline {1.21}Likelihood, AIC, and BIC in Linear Regression}{21}{subsection.1.21}%
+\contentsline {paragraph}{Likelihood Function}{21}{paragraph*.12}%
+\contentsline {paragraph}{Log-Likelihood}{22}{paragraph*.13}%
+\contentsline {paragraph}{Maximum Likelihood Estimate of Variance}{22}{paragraph*.14}%
+\contentsline {paragraph}{Akaike Information Criterion (AIC)}{23}{paragraph*.15}%
+\contentsline {paragraph}{Bayesian Information Criterion (BIC)}{23}{paragraph*.16}%
+\contentsline {paragraph}{Interpretation}{23}{paragraph*.17}%
+\contentsline {paragraph}{Difference Between AIC and BIC}{24}{paragraph*.18}%
+\contentsline {section}{\numberline {2}Logistic Regression}{25}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Linking Functions}{25}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Parameter Estimation using MLE}{26}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Interpretations of the coefficients}{27}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Key Logistic Assumptions}{27}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Odds, log-odds, odds ratio - Interpretations}{27}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Logistic \& Linear Regression Have the Same Gradient Form}{28}{subsection.2.6}%
+\contentsline {paragraph}{Linear Regression}{28}{paragraph*.19}%
+\contentsline {paragraph}{Logistic Regression}{28}{paragraph*.20}%
+\contentsline {subsection}{\numberline {2.7}Standard Errors of Logistic Regression Coefficients}{29}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Hypothesis Testing \& Likelihood Ratio Test}{30}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Leverage}{30}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Cook's Distance}{30}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Goodness of Fit in Logistic Regression}{30}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}McFadden $R^2$ in Logistic Regression}{31}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Box--Tidwell Test (Linearity of Log-Odds)}{31}{subsection.2.13}%
+\contentsline {section}{\numberline {3}Classification Evaluation Metrics}{32}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Confusion Matrix}{32}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Accuracy}{32}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Precision}{32}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Recall (Sensitivity / True Positive Rate)}{32}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Specificity (True Negative Rate)}{32}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}False Positive and False Negative Rates}{32}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}F-Score}{33}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}ROC Curve}{33}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}AUC (Area Under the ROC Curve)}{33}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Gini Coefficient}{33}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Multi-Class Confusion Matrix}{34}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Micro, Macro, and Weighted Averages}{34}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}KS Statistic (Kolmogorov--Smirnov)}{34}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Focal Loss}{35}{subsection.3.14}%
+\contentsline {section}{\numberline {4}Bias--Variance Tradeoff}{35}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Core Idea}{35}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Definitions}{35}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Bias--Variance Decomposition}{35}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Trade-off:}{35}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Isolation Forest}{36}{section.5}%
+\contentsline {subsection}{\numberline {5.1}subsampling in Isolation Forest}{37}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Hyperparameters}{37}{subsection.5.2}%
+\contentsline {section}{\numberline {6}K-Nearest Neighbors (KNN)}{37}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Core Idea}{37}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Choosing $k$}{38}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Distance Metrics}{38}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Naive Bayes}{38}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Core Idea}{38}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Naive Conditional Independence}{38}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Estimating Priors}{39}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Common Likelihood Models}{39}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Support Vector Machines (SVM)}{40}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Hard-Margin Optimization}{40}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Soft-Margin SVM}{40}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Lagrangian and Support Vectors}{41}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Decision Function}{41}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Hinge Loss}{41}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Primal \& Dual Form of SVM}{41}{subsection.8.6}%
+\contentsline {subsubsection}{\numberline {8.6.1}Primal Form}{41}{subsubsection.8.6.1}%
+\contentsline {paragraph}{Interpretation:}{41}{paragraph*.21}%
+\contentsline {paragraph}{Geometric Insight:}{41}{paragraph*.22}%
+\contentsline {subsubsection}{\numberline {8.6.2}Dual Form}{41}{subsubsection.8.6.2}%
+\contentsline {paragraph}{Recovering Primal Variables:}{42}{paragraph*.23}%
+\contentsline {paragraph}{Key Observation:}{42}{paragraph*.24}%
+\contentsline {subsubsection}{\numberline {8.6.3}Difference Between Primal and Dual}{42}{subsubsection.8.6.3}%
+\contentsline {subsubsection}{\numberline {8.6.4}When to Use Which?}{42}{subsubsection.8.6.4}%
+\contentsline {subsection}{\numberline {8.7}Kernel Trick}{43}{subsection.8.7}%
+\contentsline {section}{\numberline {9}Decision Tree Algorithm}{43}{section.9}%
+\contentsline {subsection}{\numberline {9.1}CART Algorithm}{44}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Stopping Criteria}{44}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Merits of Decision Trees}{44}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Demerits of Decision Trees}{45}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Properties of Decision Trees}{45}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Pre-Pruning Decision Trees}{45}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Cost - Complexity Pruning ( Post-Pruning)}{45}{subsection.9.7}%
+\contentsline {section}{\numberline {10}Ensemble Methods}{46}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Bagging}{46}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Boosting}{46}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Stacking}{47}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Voting}{47}{subsection.10.4}%
+\contentsline {section}{\numberline {11}Random Forest}{47}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Out-of-Bag Score (OOB Score)}{48}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Feature Importance}{48}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Proximity Matrix}{48}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Hyperparameters of Random Forest}{48}{subsection.11.4}%
+\contentsline {section}{\numberline {12}Adaboost Algorithm}{49}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Algorithm}{49}{subsection.12.1}%
+\contentsline {section}{\numberline {13}Gradient Boosting}{49}{section.13}%
+\contentsline {section}{\numberline {14}XGBoost}{50}{section.14}%
+\contentsline {section}{\numberline {15}Catboost lgbm}{52}{section.15}%
+\contentsline {section}{\numberline {16}Clustering Evaluation}{52}{section.16}%
+\contentsline {subsection}{\numberline {16.1}Silhouette Score}{52}{subsection.16.1}%
+\contentsline {section}{\numberline {17}KMeans Clustering}{52}{section.17}%
+\contentsline {subsection}{\numberline {17.1}K-Means has local minima}{53}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Variance Decomposition}{53}{subsection.17.2}%
+\contentsline {subsection}{\numberline {17.3}Computational Complexity}{53}{subsection.17.3}%
+\contentsline {subsection}{\numberline {17.4}K-Means ++}{54}{subsection.17.4}%
+\contentsline {subsection}{\numberline {17.5}K-Means Through the Expectation-Maximization Lens}{54}{subsection.17.5}%
+\contentsline {paragraph}{Expectation Step}{54}{paragraph*.25}%
+\contentsline {paragraph}{Maximization Step}{54}{paragraph*.26}%
+\contentsline {subsection}{\numberline {17.6}Comparison of K-Means \& GMM in terms of EM Algorithm}{54}{subsection.17.6}%
+\contentsline {subsection}{\numberline {17.7}K-Medoid : When the Center Must be a real point}{55}{subsection.17.7}%
+\contentsline {subsection}{\numberline {17.8}K-Modes ( For categorical data)}{55}{subsection.17.8}%
+\contentsline {subsection}{\numberline {17.9}K-Prototype( Numeric + Categorical)}{55}{subsection.17.9}%
+\contentsline {subsection}{\numberline {17.10}Assumptions of KMeans}{55}{subsection.17.10}%
+\contentsline {section}{\numberline {18}DBSCAN}{56}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Key Parameters}{56}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}Types of Points}{56}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}Density Reachability}{56}{subsection.18.3}%
+\contentsline {subsection}{\numberline {18.4}Density Connectivity}{56}{subsection.18.4}%
+\contentsline {subsection}{\numberline {18.5}DBSCAN Algorithm}{56}{subsection.18.5}%
+\contentsline {subsection}{\numberline {18.6}Choosing $\epsilon $}{57}{subsection.18.6}%
+\contentsline {subsection}{\numberline {18.7}Advantages}{57}{subsection.18.7}%
+\contentsline {subsection}{\numberline {18.8}Limitations}{57}{subsection.18.8}%
+\contentsline {section}{\numberline {19}Hierarchical Clustering}{57}{section.19}%
+\contentsline {subsection}{\numberline {19.1}Basic Idea}{57}{subsection.19.1}%
+\contentsline {subsection}{\numberline {19.2}Distance Metrics and Linkage Criteria}{57}{subsection.19.2}%
+\contentsline {subsection}{\numberline {19.3}Agglomerative Clustering Algorithm}{58}{subsection.19.3}%
+\contentsline {subsection}{\numberline {19.4}Dendrogram}{58}{subsection.19.4}%
+\contentsline {subsection}{\numberline {19.5}Ward's Method (Discussion)}{58}{subsection.19.5}%
+\contentsline {subsection}{\numberline {19.6}Advantages}{58}{subsection.19.6}%
+\contentsline {subsection}{\numberline {19.7}Limitations}{58}{subsection.19.7}%
+\contentsline {section}{\numberline {20}Gaussian Mixture Models}{58}{section.20}%
+\contentsline {subsection}{\numberline {20.1}Hard vs Soft Clustering}{58}{subsection.20.1}%
+\contentsline {subsection}{\numberline {20.2}The Latent Variable Problem}{59}{subsection.20.2}%
+\contentsline {subsection}{\numberline {20.3}Expectation-Maximization (EM) Algorithm}{59}{subsection.20.3}%
+\contentsline {paragraph}{Expectation Step (E-Step)}{59}{paragraph*.27}%
+\contentsline {paragraph}{Maximization Step (M-Step)}{59}{paragraph*.28}%
+\contentsline {subsection}{\numberline {20.4}Intuition Behind EM}{60}{subsection.20.4}%
+\contentsline {subsection}{\numberline {20.5}Interpretation}{60}{subsection.20.5}%
+\contentsline {section}{\numberline {21}Model Explainability}{60}{section.21}%
+\contentsline {subsection}{\numberline {21.1}Shapley Values}{60}{subsection.21.1}%
+\contentsline {subsubsection}{\numberline {21.1.1}Attributing payout to each player}{60}{subsubsection.21.1.1}%
+\contentsline {subsubsection}{\numberline {21.1.2}Shapley values in Machine Learning}{60}{subsubsection.21.1.2}%
+\contentsline {subsubsection}{\numberline {21.1.3}Shapley Axioms}{60}{subsubsection.21.1.3}%
+\contentsline {subsubsection}{\numberline {21.1.4}Prediction decomposition:}{61}{subsubsection.21.1.4}%
+\contentsline {subsection}{\numberline {21.2}LIME}{61}{subsection.21.2}%
+\contentsline {paragraph}{Local Interpretable Model-Agnostic Explanations}{61}{paragraph*.29}%
+\contentsline {subsubsection}{\numberline {21.2.1}LIME Algorithm}{61}{subsubsection.21.2.1}%
+\contentsline {subsubsection}{\numberline {21.2.2}Submodular Pick Algorithm}{61}{subsubsection.21.2.2}%
+\contentsline {subsubsection}{\numberline {21.2.3}Advantages / Disadvantages}{62}{subsubsection.21.2.3}%
+\contentsline {subsection}{\numberline {21.3}Partial Dependency Plot}{62}{subsection.21.3}%
+\contentsline {subsection}{\numberline {21.4}ICE - Individual Conditional Expectation Plot}{63}{subsection.21.4}%
+\contentsline {section}{\numberline {22}Model Calibration}{63}{section.22}%
+\contentsline {subsection}{\numberline {22.1}Steps in Model Calibration}{63}{subsection.22.1}%
+\contentsline {subsection}{\numberline {22.2}Brier Score Loss}{63}{subsection.22.2}%
+\contentsline {subsection}{\numberline {22.3}Platt Scaling}{64}{subsection.22.3}%
+\contentsline {subsection}{\numberline {22.4}Isotonic Regression}{64}{subsection.22.4}%
+\contentsline {subsubsection}{\numberline {22.4.1}Why We Need Isotonic Regression}{64}{subsubsection.22.4.1}%
+\contentsline {subsubsection}{\numberline {22.4.2}What Isotonic Regression Does}{64}{subsubsection.22.4.2}%
+\contentsline {subsubsection}{\numberline {22.4.3}Block Averaging Idea}{65}{subsubsection.22.4.3}%
+\contentsline {subsubsection}{\numberline {22.4.4}Pool-Adjacent-Violators (PAV) Algorithm}{65}{subsubsection.22.4.4}%
+\contentsline {subsubsection}{\numberline {22.4.5}Interpretation}{65}{subsubsection.22.4.5}%
+\contentsline {subsubsection}{\numberline {22.4.6}Numeric Example : Isotonic Regression}{65}{subsubsection.22.4.6}%
+\contentsline {subsection}{\numberline {22.5}Platt or Isotonic Regression ?}{66}{subsection.22.5}%
+\contentsline {section}{\numberline {23}Feature Selection}{66}{section.23}%
+\contentsline {subsection}{\numberline {23.1}Filter Methods}{66}{subsection.23.1}%
+\contentsline {subsubsection}{\numberline {23.1.1}Mutual Information}{66}{subsubsection.23.1.1}%
+\contentsline {subsubsection}{\numberline {23.1.2}ANOVA For Feature Selection}{66}{subsubsection.23.1.2}%
+\contentsline {subsubsection}{\numberline {23.1.3}Variation Inflation Factor - VIF}{67}{subsubsection.23.1.3}%
+\contentsline {subsubsection}{\numberline {23.1.4}Weight of Evidence}{67}{subsubsection.23.1.4}%
+\contentsline {subsubsection}{\numberline {23.1.5}Chi-Square Test of Independence}{68}{subsubsection.23.1.5}%
+\contentsline {subsection}{\numberline {23.2}Wrapper Methods in Feature Selection}{68}{subsection.23.2}%
+\contentsline {subsubsection}{\numberline {23.2.1}Forward Selection}{68}{subsubsection.23.2.1}%
+\contentsline {subsubsection}{\numberline {23.2.2}Backward Elimination}{68}{subsubsection.23.2.2}%
+\contentsline {subsubsection}{\numberline {23.2.3}Stepwise Selection}{69}{subsubsection.23.2.3}%
+\contentsline {subsubsection}{\numberline {23.2.4}Recursive Feature Elimination}{69}{subsubsection.23.2.4}%
+\contentsline {subsubsection}{\numberline {23.2.5}Rfecv Algorithm}{69}{subsubsection.23.2.5}%
+\contentsline {subsection}{\numberline {23.3}Embedded Methods in Feature Selection}{69}{subsection.23.3}%
+\contentsline {subsubsection}{\numberline {23.3.1}Lasso - L1 Regularisation}{69}{subsubsection.23.3.1}%
+\contentsline {subsubsection}{\numberline {23.3.2}Tree Methods}{70}{subsubsection.23.3.2}%
+\contentsline {subsection}{\numberline {23.4}Tree-based Feature Importance}{70}{subsection.23.4}%
+\contentsline {subsection}{\numberline {23.5}Permutation Feature Importance}{70}{subsection.23.5}%
+\contentsline {subsection}{\numberline {23.6}Drop-column}{71}{subsection.23.6}%
+\contentsline {section}{\numberline {24}Information Theory Concepts}{71}{section.24}%
+\contentsline {subsection}{\numberline {24.1}Entropy}{71}{subsection.24.1}%
+\contentsline {subsection}{\numberline {24.2}Cross Entropy Loss}{71}{subsection.24.2}%
+\contentsline {subsection}{\numberline {24.3}Joint Entropy}{71}{subsection.24.3}%
+\contentsline {subsection}{\numberline {24.4}Mutual Information}{72}{subsection.24.4}%
+\contentsline {subsection}{\numberline {24.5}KL Kullback-Leibler Divergence}{72}{subsection.24.5}%
+\contentsline {subsection}{\numberline {24.6}Population Stability Index}{72}{subsection.24.6}%
+\contentsline {subsection}{\numberline {24.7}Identities and Inequalities}{73}{subsection.24.7}%
+\contentsline {section}{\numberline {25}Principal Component Analysis (PCA)}{73}{section.25}%
+\contentsline {subsection}{\numberline {25.1}Goal and Intuition}{73}{subsection.25.1}%
+\contentsline {subsection}{\numberline {25.2}Steps of PCA}{74}{subsection.25.2}%
+\contentsline {subsection}{\numberline {25.3}Eigenvectors and Eigenvalues}{74}{subsection.25.3}%
+\contentsline {subsection}{\numberline {25.4}Explained Variance}{74}{subsection.25.4}%
+\contentsline {subsection}{\numberline {25.5}Covariance Matrix and Positive Semi-Definite Property}{74}{subsection.25.5}%
+\contentsline {subsection}{\numberline {25.6}Why Covariance Matrices are PSD}{75}{subsection.25.6}%
+\contentsline {subsection}{\numberline {25.7}Connection to Singular Value Decomposition (SVD)}{75}{subsection.25.7}%
+\contentsline {section}{\numberline {26}Recommendation Systems}{75}{section.26}%
+\contentsline {subsection}{\numberline {26.1}Goal of Recommendation Systems}{75}{subsection.26.1}%
+\contentsline {subsection}{\numberline {26.2}Main Types of Recommendation Systems}{75}{subsection.26.2}%
+\contentsline {subsection}{\numberline {26.3}Content-Based Filtering}{76}{subsection.26.3}%
+\contentsline {subsection}{\numberline {26.4}Collaborative Filtering}{76}{subsection.26.4}%
+\contentsline {subsubsection}{\numberline {26.4.1}User-Based Collaborative Filtering}{76}{subsubsection.26.4.1}%
+\contentsline {subsubsection}{\numberline {26.4.2}Item-Based Collaborative Filtering}{77}{subsubsection.26.4.2}%
+\contentsline {subsubsection}{\numberline {26.4.3}Matrix Factorization}{77}{subsubsection.26.4.3}%
+\contentsline {subsection}{\numberline {26.5}Hybrid Methods}{78}{subsection.26.5}%
+\contentsline {subsection}{\numberline {26.6}Metrics for Recommendation Systems}{79}{subsection.26.6}%
+\contentsline {section}{\numberline {27}Methods/Techniques in Machine Learning}{80}{section.27}%
+\contentsline {subsection}{\numberline {27.1}Handling Missing Values}{80}{subsection.27.1}%
+\contentsline {paragraph}{Simple methods}{80}{paragraph*.30}%
+\contentsline {paragraph}{Model-based methods}{80}{paragraph*.31}%
+\contentsline {paragraph}{Important practice}{81}{paragraph*.32}%
+\contentsline {subsection}{\numberline {27.2}Data Leakage}{81}{subsection.27.2}%
+\contentsline {subsection}{\numberline {27.3}Cross Validation Algorithm}{81}{subsection.27.3}%
+\contentsline {subsubsection}{\numberline {27.3.1}Holdout Validation}{81}{subsubsection.27.3.1}%
+\contentsline {subsubsection}{\numberline {27.3.2}Leave-One-Out Cross Validation (LOOCV)}{81}{subsubsection.27.3.2}%
+\contentsline {subsubsection}{\numberline {27.3.3}Leave-\(p\)-Out Cross Validation}{81}{subsubsection.27.3.3}%
+\contentsline {subsubsection}{\numberline {27.3.4}Repeated Cross Validation}{81}{subsubsection.27.3.4}%
+\contentsline {subsubsection}{\numberline {27.3.5}Stratified Cross Validation}{81}{subsubsection.27.3.5}%
+\contentsline {subsubsection}{\numberline {27.3.6}Time Series Cross Validation}{81}{subsubsection.27.3.6}%
+\contentsline {subsubsection}{\numberline {27.3.7}k -fold}{82}{subsubsection.27.3.7}%
+\contentsline {subsection}{\numberline {27.4}Class Imbalance}{82}{subsection.27.4}%
+\contentsline {subsection}{\numberline {27.5}Encoding Strategies}{82}{subsection.27.5}%
+\contentsline {subsection}{\numberline {27.6}Feature Transformations}{83}{subsection.27.6}%
+\contentsline {subsection}{\numberline {27.7}Model Monitoring}{83}{subsection.27.7}%
