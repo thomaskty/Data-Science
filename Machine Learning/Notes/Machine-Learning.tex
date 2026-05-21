@@ -3341,55 +3341,470 @@
 			\item The independence assumption is usually false in real data (words in a sentence, pixels in an image, and medical symptoms are often correlated), but Naive Bayes often performs well in practice.
 			\item Different feature types can be mixed by choosing an appropriate likelihood model per feature.
 		\end{itemize}
-	
-	
+
+		\newpage
 		\section{Support Vector Machines (SVM)}
-		Support Vector Machine is a supervised learning algorithm for classification, regression, and outlier detection. It finds the decision boundary that maximizes the margin between classes.
-	
+		
+		Suppose the dataset is
+		
+		\[
+		\{(x_i,y_i)\}_{i=1}^{n}
+		\]
+		
+		where
+		
+		\[
+		x_i \in \mathbb{R}^{d},
+		\quad
+		y_i \in \{-1,+1\}
+		\]
+		
+		A linear classifier is defined as
+		
+		\[
+		f(x)=w^\top x+b
+		\]
+		
+		Prediction is made using
+		
+		\[
+		\hat y = \mathrm{sign}(w^\top x+b)
+		\]
+		
+		where
+		
 		\begin{itemize}
-			\item Maximizing margin improves generalization.
-			\item Convex optimization gives a global optimum.
-			\item Kernels allow non-linear decision boundaries.
+		    \item $w$ is the weight vector (normal vector),
+		    \item $b$ is the bias/intercept.
 		\end{itemize}
-	
-		\begin{align*}
-			\Large w \cdot x + b = 0
-		\end{align*}
-	
-		\begin{align*}
-			\hat{y} =\begin{cases}+1, & \text{if } w \cdot x + b \ge 0 \\-1, & \text{if } w \cdot x + b < 0\end{cases}
-		\end{align*}
-	
-	
-		If data are linearly separable, there are infinitely many separating hyperplanes. SVM selects the one with the largest margin.
-	
+		
+		\subsection{Hyperplane}
+		
+		The decision boundary is the hyperplane
+		
+		\[
+		w^\top x+b=0
+		\]
+		
+		A hyperplane in $\mathbb{R}^{d}$ is a $(d-1)$ dimensional affine subspace.
+		
+		Examples:
+		
 		\begin{itemize}
-			\item Margin hyperplanes: $w\cdot x + b = +1$ and $w\cdot x + b = -1$.
-			\item All points satisfy: $y_i (w \cdot x_i + b) \ge 1$.
-			\item Margin width: $\frac{2}{\lVert w \rVert}$.
+		    \item 2D $\rightarrow$ line
+		    \item 3D $\rightarrow$ plane
+		    \item higher dimensions $\rightarrow$ hyperplane
 		\end{itemize}
-	
-	
-		\subsection{Hard-Margin Optimization}
-		\begin{align*}
-			\min_{w,\, b} \quad & \frac{1}{2}\lVert w \rVert^2 \\
-			\text{subject to} \quad & y_i (w \cdot x_i + b) \ge 1,\quad i=1,\dots,n
-		\end{align*}
-	
-		\subsection{Soft-Margin SVM}
-		When classes overlap, introduce slack variables $\xi_i$ to allow controlled violations:
-	
-		\begin{align*}
-			\min_{w,\, b,\, \xi} \quad & \frac{1}{2}\lVert w \rVert^2 + C \sum_{i=1}^n \xi_i \\
-			\text{subject to} \quad & y_i (w \cdot x_i + b) \ge 1 - \xi_i,\quad \xi_i \ge 0
-		\end{align*}
-	
+		
+		The vector $w$ is perpendicular to the hyperplane.
+		
+		For any point $x$:
+		
+		\[
+		w^\top x+b
+		\]
+		
+		represents a signed scaled distance from the hyperplane.
+		
+		The true perpendicular distance is
+		
+		\[
+		\frac{|w^\top x+b|}{\|w\|}
+		\]
+		
+		If $\|w\|=1$, then
+		
+		\[
+		w^\top x+b
+		\]
+		
+		directly becomes the signed perpendicular distance.
+		
+		\subsection{Projection Interpretation}
+		
+		If $w$ is a unit normal vector, then
+		
+		\[
+		w^\top x
+		\]
+		
+		is the projection of $x$ onto the direction $w$.
+		
+		Take a point $x_0$ on the hyperplane:
+		
+		\[
+		w^\top x_0+b=0
+		\]
+		
+		which implies
+		
+		\[
+		w^\top x_0=-b
+		\]
+		
+		Thus, $-b$ acts as the cutoff threshold along the direction $w$.
+		
+		For any point $x$:
+		
+		\[
+		w^\top x > -b
+		\]
+		
+		implies the point lies on one side of the hyperplane, while
+		
+		\[
+		w^\top x < -b
+		\]
+		
+		implies it lies on the other side.
+		
+		Thus, a linear classifier can be interpreted as:
+		
+		\begin{enumerate}
+		    \item Project onto direction $w$
+		    \item Threshold at $-b$
+		\end{enumerate}
+		
+		\subsection{Margin}
+		
+		The margin is the perpendicular distance between the two supporting hyperplanes:
+		
+		\[
+		w^\top x+b=1
+		\]
+		
+		and
+		
+		\[
+		w^\top x+b=-1
+		\]
+		
+		The distance from the decision boundary to either margin boundary is
+		
+		\[
+		\frac{1}{\|w\|}
+		\]
+		
+		Hence the total margin width is
+		
+		\[
+		\frac{2}{\|w\|}
+		\]
+		
+		Maximizing margin is therefore equivalent to minimizing $\|w\|$.
+		
+		\subsection{Support Vectors}
+		
+		Support vectors are the points closest to the decision boundary.
+		
+		For hard-margin SVM, they satisfy
+		
+		\[
+		y_i(w^\top x_i+b)=1
+		\]
+		
+		These points lie exactly on the margin boundaries.
+		
+		For soft-margin SVM, support vectors are all points satisfying
+		
+		\[
+		y_i(w^\top x_i+b)\le1
+		\]
+		
+		This includes:
+		
 		\begin{itemize}
-			\item $C$ controls penalty strength: larger $C$ penalizes violations more.
-			\item $0 \le \xi_i < 1$: inside margin but correctly classified.
-			\item $\xi_i = 1$: on the decision boundary.
-			\item $\xi_i > 1$: misclassified.
+		    \item points on the margin,
+		    \item points inside the margin,
+		    \item misclassified points.
 		\end{itemize}
+		
+		Only support vectors contribute nonzero hinge loss.
+		
+		\subsection{Hard Margin SVM}
+		
+		Hard-margin SVM assumes perfectly linearly separable data.
+		
+		Optimization problem:
+		
+		\[
+		\min_{w,b}\ \frac{1}{2}\|w\|^2
+		\quad
+		\text{subject to}
+		\quad
+		y_i(w^\top x_i+b)\ge1,\ \forall i
+		\]
+		
+		The constraints enforce:
+		
+		\begin{itemize}
+		    \item positive-class points have scores $\ge +1$,
+		    \item negative-class points have scores $\le -1$.
+		\end{itemize}
+		
+		The values $\pm1$ arise due to scaling normalization.
+		
+		Hyperplanes
+		
+		\[
+		w^\top x+b=0
+		\]
+		
+		and
+		
+		\[
+		2w^\top x+2b=0
+		\]
+		
+		represent the same geometric boundary. SVM removes this scale ambiguity by fixing the functional margin to $1$.
+		
+		\subsection{Soft Margin Primal Form}
+		
+		Real datasets are usually not perfectly separable.
+		
+		Introduce slack variables
+		
+		\[
+		\xi_i \ge 0
+		\]
+		
+		and relax constraints:
+		
+		\[
+		y_i(w^\top x_i+b)\ge1-\xi_i
+		\]
+		
+		Soft-margin optimization problem:
+		
+		\[
+		\min_{w,b,\xi}\ \frac{1}{2}\|w\|^2 + C\sum_{i=1}^{n}\xi_i
+		\]
+		
+		subject to
+		
+		\[
+		y_i(w^\top x_i+b)\ge1-\xi_i,\ \forall i
+		\]
+		
+		with
+		
+		\[
+		\xi_i \ge 0,\ \forall i
+		\]
+		
+		Interpretation of slack variables:
+		
+		\begin{itemize}
+		    \item $\xi_i=0$ : correctly classified and outside margin
+		    \item $0<\xi_i<1$ : correctly classified but inside margin
+		    \item $\xi_i>1$ : misclassified
+		\end{itemize}
+		
+		The parameter $C$ controls the tradeoff between:
+		
+		\begin{itemize}
+		    \item maximizing margin,
+		    \item minimizing classification violations.
+		\end{itemize}
+		
+		\subsection{Hinge Loss Derivation}
+		
+		From constraints:
+		
+		\[
+		\xi_i \ge 1-y_i(w^\top x_i+b)
+		\]
+		
+		and
+		
+		\[
+		\xi_i \ge 0
+		\]
+		
+		the optimal slack variable becomes
+		
+		\[
+		\xi_i =
+		\max\left(0,\ 1-y_i(w^\top x_i+b)\right)
+		\]
+		
+		This gives the hinge loss:
+		
+		\[
+		L_{\text{hinge}}(x_i,y_i)=
+		\max\left(0,\ 1-y_i(w^\top x_i+b)\right)
+		\]
+		
+		Thus, the unconstrained primal objective becomes
+		
+		\[
+		\min_{w,b}
+		\frac{1}{2}\|w\|^2
+		+
+		C\sum_{i=1}^{n}
+		\max\left(0,\ 1-y_i(w^\top x_i+b)\right)
+		\]
+		
+		\subsection{Interpretation of Hinge Loss}
+		
+		Define
+		
+		\[
+		z_i = y_i(w^\top x_i+b)
+		\]
+		
+		Then
+		
+		\[
+		L_i=\max(0,1-z_i)
+		\]
+		
+		Three important cases arise:
+		
+		\begin{enumerate}
+		    \item $z_i \ge 1$
+		
+		    Correctly classified and outside margin.
+		
+		    \[
+		    L_i=0
+		    \]
+		
+		    \item $0<z_i<1$
+		
+		    Correctly classified but inside margin.
+		
+		    \[
+		    L_i=1-z_i
+		    \]
+		
+		    \item $z_i<0$
+		
+		    Misclassified.
+		
+		    Large hinge loss penalty.
+		\end{enumerate}
+		
+		Thus SVM does not merely enforce correct classification; it enforces sufficiently confident classification.
+		
+		\subsection{Functional vs Geometric Margin}
+		
+		Functional margin:
+		
+		\[
+		y_i(w^\top x_i+b)
+		\]
+		
+		depends on scaling of $(w,b)$.
+		
+		Geometric margin:
+		
+		\[
+		\frac{y_i(w^\top x_i+b)}{\|w\|}
+		\]
+		
+		represents the true perpendicular distance from the hyperplane.
+		
+		SVM fixes the functional margin to $1$ so that maximizing geometric margin reduces to minimizing $\|w\|$.
+		
+		\subsection{Gradients of the Soft-Margin Objective}
+		
+		Objective:
+		
+		\[
+		J(w,b)
+		=
+		\frac{\lambda}{2}\|w\|^2
+		+
+		\sum_{i=1}^{n}
+		\max(0,1-y_i(w^\top x_i+b))
+		\]
+		
+		For one sample:
+		
+		\[
+		L_i=
+		\max(0,1-y_i(w^\top x_i+b))
+		\]
+		
+		Case 1:
+		
+		\[
+		y_i(w^\top x_i+b)\ge1
+		\]
+		
+		Then
+		
+		\[
+		\nabla_w J = \lambda w
+		\]
+		
+		\[
+		\nabla_b J = 0
+		\]
+		
+		Case 2:
+		
+		\[
+		y_i(w^\top x_i+b)<1
+		\]
+		
+		Then
+		
+		\[
+		\nabla_w J
+		=
+		\lambda w - y_i x_i
+		\]
+		
+		\[
+		\nabla_b J
+		=
+		-y_i
+		\]
+		
+		Gradient descent updates:
+		
+		\[
+		w \leftarrow w-\eta \nabla_w J
+		\]
+		
+		\[
+		b \leftarrow b-\eta \nabla_b J
+		\]
+		
+		where $\eta$ is the learning rate.
+		
+		\subsection{Regularization}
+		
+		The regularization term is
+		
+		\[
+		\frac{\lambda}{2}\|w\|^2
+		\]
+		
+		Larger $\lambda$ encourages smaller $\|w\|$, which produces a wider margin:
+		
+		\[
+		\frac{2}{\|w\|}
+		\]
+		
+		Thus regularization directly controls geometric separation and model complexity.
+		
+		\subsection{Important Insight}
+		
+		SVM fundamentally seeks a hyperplane that:
+		
+		\begin{itemize}
+		    \item separates the classes,
+		    \item maximizes geometric margin,
+		    \item allows soft violations through hinge loss,
+		    \item focuses optimization only on difficult boundary points.
+		\end{itemize}
+		
+		
+		
+		
 	
 		\subsection{Lagrangian and Support Vectors}
 		\begin{align*}
