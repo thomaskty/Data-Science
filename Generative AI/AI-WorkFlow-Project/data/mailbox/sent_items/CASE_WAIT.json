@@ -1,0 +1,10 @@
+{
+  "case_id": "CASE_WAIT",
+  "owner_email": "model_owner@bank.com",
+  "questions": [
+    "Can you provide details on the statistical methods used in the model?",
+    "What specific AI or machine learning techniques are employed in the model?",
+    "Is there any documentation regarding the validation processes for the model?",
+    "Can you clarify the parameter estimation methods used in the model?"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "case_id": "CASE_NONMODEL_001",
+  "owner_email": "business_analyst@bank.com",
+  "questions": [
+    "What specific statistical methods are used in the model?",
+    "What AI or machine learning techniques are employed?",
+    "Can you provide documentation on the system's capability to generate predictions?",
+    "Is there any formal validation documentation available?",
+    "What are the sources of uncertainty and how are they documented?"
+  ]
+}

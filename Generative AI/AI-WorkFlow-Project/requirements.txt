@@ -1,0 +1,7 @@
+
+langchain
+langchain-openai
+langgraph
+openai
+pydantic
+psycopg2-binary

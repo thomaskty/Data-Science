@@ -20,9 +20,12 @@ select * from (
 where a.top3<=3; 
 
 -- 4. For each customer, compute a running total of total_amount over time
-select a.customer_id,a.order_date,a.order_id,a.total_amount,
-sum(a.total_amount) over (partition by a.customer_id order by a.order_date asc, a.order_id asc
-rows between unbounded preceding and current row) as running_total
+SELECT a.customer_id,a.order_date,a.order_id,a.total_amount,
+SUM(a.total_amount) over (
+    PARTITION BY a.customer_id 
+    ORDER BY a.order_date ASC, a.order_id ASC
+    rows BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+) as running_total
 from orders a ; 
 
 -- 5. For each order, show previous order amount and next order amount for the same customer.

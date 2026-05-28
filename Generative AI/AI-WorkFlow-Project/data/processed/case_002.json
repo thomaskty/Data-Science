@@ -1,0 +1,5 @@
+{
+  "case_id": "CASE_WAIT",
+  "owner_email": "model_owner@bank.com",
+  "document": "Model Documentation: Credit Risk Calculator\n\nPurpose:\nCalculate credit scores for loan applicants.\n\nMethodology:\nThe system uses a weighted sum of applicant attributes (income, debt, payment history). Weights are based on historical defaults. The system does NOT use machine learning or AI.\n\nTechnical Details:\n- Inputs: Income, existing debt, payment history (12 months)\n- Processing: Weighted sum calculation\n- Outputs: Credit score 0-1000\n\nAssumptions:\n- Historical default patterns remain stable\n- Applicant data is accurate\n\nUncertainty:\nNot explicitly documented.\n\nLimitations:\nNo validation performed on weight stability.\n\nBusiness Usage:\nLoan approval decisions are made automatically based on score thresholds.\n\nNote: The system sometimes adjusts weights based on recent default trends, but we don't consider this 'modeling'."
+}

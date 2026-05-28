@@ -1,0 +1,95 @@
+# Guidelines for Model Identification v2.1
+
+## Critical Rules (A system is a MODEL if it meets ANY of these):
+
+### ML001: Statistical/Econometric Methods
+- **Satisfied when**: Specific statistical methods are named (regression, clustering, decision trees, etc.)
+- **NOT Satisfied when**: No statistical methods are used
+- **CLARIFICATION REQUIRED when**: Vague terms are used ("some statistical methods", "proprietary algorithms", "data-driven techniques", "analytics", "machine learning" without specifics)
+
+### ML002: AI/Machine Learning/Adaptive Algorithms
+- **Satisfied when**: Specific ML/AI techniques are named (neural networks, gradient boosting, LLMs, etc.)
+- **NOT Satisfied when**: No adaptive/learning components
+- **CLARIFICATION REQUIRED when**: Terms like "adaptive", "learning", "periodically updates", "adjusts based on data" appear without specific algorithm names
+
+### ML003: Predictions/Forecasts/Projections
+- **Satisfied when**: System explicitly generates predictions about future events or behaviors
+- **NOT Satisfied when**: Only descriptive/historical reporting with no forward-looking component
+- **CLARIFICATION REQUIRED when**: System segments, scores, or classifies in ways that implicitly predict behavior but documentation denies prediction
+
+### ML004: Optimization Techniques
+- **Satisfied when**: Specific optimization methods are named (linear programming, MLE, gradient descent, etc.)
+- **NOT Satisfied when**: No optimization is performed
+- **CLARIFICATION REQUIRED when**: Terms like "optimize", "maximize", "minimize", "best fit" appear without methodology details
+
+### ML005: Parameters Estimated from Data
+- **Satisfied when**: Parameter estimation method is clearly described
+- **NOT Satisfied when**: No parameters or parameters are fixed constants
+- **CLARIFICATION REQUIRED when**: Terms like "weights", "coefficients", "parameters", "data-driven" appear without estimation details
+
+## Escalation Rules (Trigger ESCALATE_TO_HUMAN when):
+
+### ESC001: Missing Uncertainty Quantification
+- **Escalate when**: System is likely a model but has no uncertainty documentation
+
+### ESC002: Missing Model Validation
+- **Escalate when**: System is likely a model but has no formal validation (only "looks reasonable" is NOT sufficient)
+
+### ESC003: Missing Methodology Documentation
+- **Escalate when**: Critical methodology details are missing after 2 clarification rounds
+
+## Clarification Rules (Generate questions when):
+
+### CLR001: Ambiguous Statistical Methods
+**Trigger keywords**: "some statistical", "proprietary", "analytics", "data mining", "advanced techniques", "algorithm" (without name)
+
+**Required question template**:
+"What specific statistical or mathematical techniques does your system use? Please name the exact algorithm(s) (e.g., K-means clustering, logistic regression, random forest, etc.). If using vendor software, provide the technical documentation showing the statistical approach."
+
+### CLR002: Ambiguous Adaptive Elements
+**Trigger keywords**: "periodically", "updates", "adjusts", "recalculates", "dynamic", "real-time", "learning"
+
+**Required question template**:
+"Your documentation mentions [specific phrase]. Does your system change automatically over time? Please explain: (a) What triggers updates? (b) Is the update process automated or manual? (c) How often do updates occur? (d) What specific algorithm controls the adaptation?"
+
+### CLR003: Ambiguous Parameter Estimation
+**Trigger keywords**: "parameters", "weights", "coefficients", "data-driven", "calibrated", "trained", "fitted"
+
+**Required question template**:
+"Your documentation mentions [specific phrase]. What parameters are estimated from data? Please explain: (a) List all parameters, (b) How are they calculated? (c) What data is used for estimation? (d) How often are they re-estimated?"
+
+### CLR004: Model-Like Behavior with Denial
+**Trigger when**: Documentation states "not a model" or "doesn't require model governance" BUT system exhibits ANY of:
+- Segmentation/classification that drives business decisions
+- Scoring that influences customer treatment
+- Automated decision-making
+- Predictive elements
+
+**Required question template**:
+"Your documentation states this is 'not a model' but the described business usage suggests model-like behavior. Please explain which of the model criteria (ML001-ML005) do NOT apply to your system, and why. Provide specific evidence for each criterion you claim is not met."
+
+### CLR005: Missing Validation Documentation
+**Trigger keywords**: "look reasonable", "face validity", "eye test", "subject matter expert review", "not validated"
+
+**Required question template**:
+"Your validation approach ('looks reasonable') does not meet MRM standards. Please describe your formal validation plan including: (a) Back-testing methodology, (b) Out-of-sample testing, (c) Stability analysis, (d) Sensitivity analysis, (e) Benchmarking against alternatives."
+
+### CLR006: Missing Uncertainty Documentation
+**Trigger keywords**: "uncertainty not documented", "no uncertainty", "deterministic" (with model-like behavior)
+
+**Required question template**:
+"Please document the uncertainty in your outputs: (a) What are the key sources of uncertainty? (b) How is uncertainty measured? (c) What confidence intervals or error bounds exist? (d) How is uncertainty communicated to users?"
+
+## Decision Matrix
+
+| Condition | Determination |
+|-----------|---------------|
+| All ML rules clearly NOT satisfied AND no ambiguous descriptions | NON_MODEL |
+| Any ML rule clearly satisfied with good documentation | MODEL |
+| ANY ambiguous description (CLR triggers) | NEEDS_CLARIFICATION |
+| After 2 clarification rounds, still ambiguous | ESCALATE_TO_HUMAN |
+| Clear model behavior but missing validation/uncertainty docs | NEEDS_CLARIFICATION |
+
+## Examples That Trigger Clarification
+
+### Example 1: Vague Statistical Methods

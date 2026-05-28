@@ -1,0 +1,152 @@
+[
+  {
+    "rule_id": "ML001",
+    "description": "Specific statistical methods must be named to classify the system as a model. Vague terms are insufficient.",
+    "category": "Model Identification",
+    "severity": "HIGH",
+    "rule_type": "Critical",
+    "target_sections": [
+      "Model Description",
+      "Methodology Documentation"
+    ]
+  },
+  {
+    "rule_id": "ML002",
+    "description": "Specific AI/ML techniques must be named to classify the system as a model. General terms without specifics are not acceptable.",
+    "category": "Model Identification",
+    "severity": "HIGH",
+    "rule_type": "Critical",
+    "target_sections": [
+      "Model Description",
+      "Methodology Documentation"
+    ]
+  },
+  {
+    "rule_id": "ML003",
+    "description": "The system must explicitly generate predictions about future events or behaviors to be classified as a model. Descriptive reporting alone is not sufficient.",
+    "category": "Model Identification",
+    "severity": "HIGH",
+    "rule_type": "Critical",
+    "target_sections": [
+      "Model Description",
+      "Output Documentation"
+    ]
+  },
+  {
+    "rule_id": "ML004",
+    "description": "Specific optimization methods must be named to classify the system as a model. General optimization terms without methodology details are insufficient.",
+    "category": "Model Identification",
+    "severity": "HIGH",
+    "rule_type": "Critical",
+    "target_sections": [
+      "Model Description",
+      "Methodology Documentation"
+    ]
+  },
+  {
+    "rule_id": "ML005",
+    "description": "Parameter estimation methods must be clearly described to classify the system as a model. Fixed parameters or vague descriptions are not acceptable.",
+    "category": "Model Identification",
+    "severity": "HIGH",
+    "rule_type": "Critical",
+    "target_sections": [
+      "Model Description",
+      "Methodology Documentation"
+    ]
+  },
+  {
+    "rule_id": "ESC001",
+    "description": "Escalate when the system is likely a model but lacks uncertainty documentation.",
+    "category": "Model Validation",
+    "severity": "VERY_HIGH",
+    "rule_type": "Escalation",
+    "target_sections": [
+      "Validation Documentation",
+      "Uncertainty Documentation"
+    ]
+  },
+  {
+    "rule_id": "ESC002",
+    "description": "Escalate when the system is likely a model but lacks formal validation documentation.",
+    "category": "Model Validation",
+    "severity": "VERY_HIGH",
+    "rule_type": "Escalation",
+    "target_sections": [
+      "Validation Documentation"
+    ]
+  },
+  {
+    "rule_id": "ESC003",
+    "description": "Escalate when critical methodology details are missing after two clarification rounds.",
+    "category": "Model Methodology",
+    "severity": "VERY_HIGH",
+    "rule_type": "Escalation",
+    "target_sections": [
+      "Methodology Documentation"
+    ]
+  },
+  {
+    "rule_id": "CLR001",
+    "description": "Generate clarification questions when ambiguous statistical methods are mentioned without specifics.",
+    "category": "Clarification",
+    "severity": "MEDIUM",
+    "rule_type": "Clarification",
+    "target_sections": [
+      "Model Description",
+      "Methodology Documentation"
+    ]
+  },
+  {
+    "rule_id": "CLR002",
+    "description": "Generate clarification questions when adaptive elements are mentioned without specific algorithms.",
+    "category": "Clarification",
+    "severity": "MEDIUM",
+    "rule_type": "Clarification",
+    "target_sections": [
+      "Model Description",
+      "Methodology Documentation"
+    ]
+  },
+  {
+    "rule_id": "CLR003",
+    "description": "Generate clarification questions when parameter estimation is mentioned without details.",
+    "category": "Clarification",
+    "severity": "MEDIUM",
+    "rule_type": "Clarification",
+    "target_sections": [
+      "Model Description",
+      "Methodology Documentation"
+    ]
+  },
+  {
+    "rule_id": "CLR004",
+    "description": "Generate clarification questions when model-like behavior is denied despite evidence of such behavior.",
+    "category": "Clarification",
+    "severity": "MEDIUM",
+    "rule_type": "Clarification",
+    "target_sections": [
+      "Model Description",
+      "Business Impact"
+    ]
+  },
+  {
+    "rule_id": "CLR005",
+    "description": "Generate clarification questions when validation documentation is missing or insufficient.",
+    "category": "Clarification",
+    "severity": "MEDIUM",
+    "rule_type": "Clarification",
+    "target_sections": [
+      "Validation Documentation"
+    ]
+  },
+  {
+    "rule_id": "CLR006",
+    "description": "Generate clarification questions when uncertainty documentation is missing despite model-like behavior.",
+    "category": "Clarification",
+    "severity": "MEDIUM",
+    "rule_type": "Clarification",
+    "target_sections": [
+      "Uncertainty Documentation"
+    ]
+  }
+]

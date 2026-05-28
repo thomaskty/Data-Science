@@ -1,0 +1,12 @@
+{
+  "case_id": "CASE_MODEL_001",
+  "owner_email": "quant_analyst@bank.com",
+  "questions": [
+    "Can you provide specific statistical methods used in the system?",
+    "What AI or machine learning techniques are employed in the model?",
+    "Is there any documentation on the model's predictive capabilities?",
+    "Can you clarify the parameter estimation methods used?",
+    "Is there formal validation documentation available for the model?",
+    "What sources of uncertainty are documented in the system?"
+  ]
+}
