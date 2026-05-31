@@ -1,0 +1,392 @@
+# Inferential Statistics Roadmap for Intermediate–Advanced Data Scientists
+
+## 1. Foundations of Statistical Inference
+
+### Core Concepts
+- Population vs Sample
+- Parameter vs Statistic
+- Random Variables
+- Probability Fundamentals
+- Joint, Marginal, and Conditional Probability
+- Expected Value (Mean)
+- Variance and Standard Deviation
+- Covariance
+- Law of Large Numbers (LLN)
+- Sampling Distributions
+- Standard Error
+- Central Limit Theorem (CLT)
+- Bias and Variance
+- Consistency of Estimators
+
+### Key Questions
+- How can we infer population characteristics from a sample?
+- Why do sample statistics vary across samples?
+- What is the role of sampling variability?
+
+---
+
+## 2. Probability Distributions
+
+### Continuous Distributions
+- Normal (Gaussian) Distribution
+- Uniform Distribution
+- Exponential Distribution
+- Gamma Distribution
+- Beta Distribution
+- Log-Normal Distribution
+
+### Discrete Distributions
+- Bernoulli Distribution
+- Binomial Distribution
+- Geometric Distribution
+- Poisson Distribution
+- Negative Binomial Distribution
+
+### Sampling/Test Distributions
+- Student's t Distribution
+- Chi-Square Distribution
+- F Distribution
+
+### Expected Understanding
+- Distribution parameters
+- Shape and properties
+- Mean and variance
+- Common use cases
+- Relationships among distributions
+
+---
+
+## 3. Estimation Theory
+
+### Point Estimation
+- Sample Mean
+- Sample Variance
+- Maximum Likelihood Estimation (MLE)
+- Method of Moments
+
+### Properties of Estimators
+- Unbiasedness
+- Efficiency
+- Consistency
+- Sufficiency
+
+### Interval Estimation
+- Confidence Intervals
+- Margin of Error
+- Bootstrap Confidence Intervals
+
+### Key Questions
+- What is the difference between an estimator and an estimate?
+- What makes one estimator better than another?
+
+---
+
+## 4. Hypothesis Testing Fundamentals
+
+### Core Components
+- Null Hypothesis (H₀)
+- Alternative Hypothesis (H₁)
+- Test Statistic
+- Critical Region
+- Critical Value
+
+### Error Types
+- Type I Error (False Positive)
+- Type II Error (False Negative)
+
+### Important Concepts
+- Significance Level (α)
+- Statistical Power (1 − β)
+- Effect Size
+- Practical vs Statistical Significance
+
+### Key Questions
+- Why can a result be statistically significant but not practically important?
+
+---
+
+## 5. Classical Statistical Tests
+
+### Mean Comparison Tests
+- One-Sample Z-Test
+- One-Sample T-Test
+- Independent Two-Sample T-Test
+- Welch's T-Test
+- Paired T-Test
+
+### Variance Tests
+- F-Test
+- Bartlett's Test
+- Levene's Test
+
+### Proportion Tests
+- One-Proportion Z-Test
+- Two-Proportion Z-Test
+
+### Independence Tests
+- Chi-Square Goodness-of-Fit Test
+- Chi-Square Test of Independence
+
+### Expected Understanding
+- Assumptions
+- Test statistics
+- Interpretation of results
+
+---
+
+## 6. Analysis of Variance (ANOVA)
+
+### Types of ANOVA
+- One-Way ANOVA
+- Two-Way ANOVA
+- Repeated Measures ANOVA
+
+### Advanced Concepts
+- Interaction Effects
+- Main Effects
+- Between-Group vs Within-Group Variability
+
+### Post-Hoc Analysis
+- Tukey HSD
+- Bonferroni Correction
+- Multiple Comparison Procedures
+
+### Key Questions
+- Why use ANOVA instead of multiple t-tests?
+
+---
+
+## 7. Nonparametric Inference
+
+### Rank-Based Tests
+- Mann–Whitney U Test
+- Wilcoxon Signed-Rank Test
+- Kruskal–Wallis Test
+- Friedman Test
+
+### Core Concepts
+- Distribution-Free Methods
+- Rank-Based Statistics
+- Robustness to Assumption Violations
+
+### Key Questions
+- When should nonparametric tests be preferred over parametric tests?
+
+---
+
+## 8. Correlation and Association
+
+### Measures of Association
+- Covariance
+- Pearson Correlation
+- Spearman Rank Correlation
+- Kendall Tau Correlation
+
+### Key Concepts
+- Linear vs Monotonic Relationships
+- Correlation Coefficient Interpretation
+- Correlation vs Causation
+
+### Key Questions
+- Can variables be dependent while having zero correlation?
+
+---
+
+## 9. Regression Inference
+
+### Linear Regression Foundations
+- Ordinary Least Squares (OLS)
+- Regression Assumptions
+- Residual Analysis
+
+### Statistical Inference
+- Confidence Intervals for Coefficients
+- T-Tests for Coefficients
+- F-Test for Overall Model Significance
+
+### Model Evaluation
+- R²
+- Adjusted R²
+
+### Diagnostic Analysis
+- Multicollinearity
+- Heteroscedasticity
+- Autocorrelation
+
+### Diagnostic Tests
+- Variance Inflation Factor (VIF)
+- Breusch–Pagan Test
+- Durbin–Watson Test
+
+---
+
+## 10. Multiple Testing and Error Control
+
+### The Multiple Testing Problem
+- Family-Wise Error Rate (FWER)
+- False Discovery Rate (FDR)
+
+### Correction Methods
+- Bonferroni Correction
+- Holm Correction
+- Benjamini–Hochberg Procedure
+
+### Key Questions
+- Why does the probability of false positives increase with multiple tests?
+
+---
+
+## 11. Resampling Methods
+
+### Bootstrap Methods
+- Bootstrap Sampling
+- Bootstrap Confidence Intervals
+- Variance Estimation
+
+### Permutation Testing
+- Randomization Tests
+- Permutation-Based Inference
+
+### Applications
+- Small Sample Analysis
+- Distribution-Free Inference
+- Model Evaluation
+
+---
+
+## 12. Bayesian Inference
+
+### Core Components
+- Prior Distribution
+- Likelihood
+- Posterior Distribution
+
+### Bayes' Theorem
+- Prior Updating
+- Posterior Probability
+
+### Advanced Concepts
+- Posterior Predictive Distribution
+- Bayesian Updating
+- Credible Intervals
+
+### Key Questions
+- How do credible intervals differ from confidence intervals?
+
+---
+
+## 13. Experimental Design and A/B Testing
+
+### Experimental Design Principles
+- Randomization
+- Blocking
+- Stratification
+- Control Groups
+- Treatment Groups
+
+### A/B Testing Concepts
+- Sample Size Determination
+- Power Analysis
+- Minimum Detectable Effect (MDE)
+- Sequential Testing
+
+### Practical Topics
+- Experiment Monitoring
+- Metric Selection
+- Guardrail Metrics
+
+### Key Questions
+- How do you design a statistically valid experiment?
+
+---
+
+## 14. Causal Inference
+
+### Fundamental Concepts
+- Correlation vs Causation
+- Counterfactual Framework
+- Confounding Variables
+- Selection Bias
+
+### Methods
+- Randomized Controlled Trials (RCTs)
+- Difference-in-Differences (DiD)
+- Propensity Score Matching (PSM)
+- Instrumental Variables (IV)
+
+### Applications
+- Policy Evaluation
+- Product Impact Analysis
+- Marketing Attribution
+
+---
+
+## 15. Statistical Assumptions and Diagnostics
+
+### Common Assumptions
+- Independence
+- Normality
+- Homoscedasticity
+- Linearity
+- Stationarity (Time Series)
+
+### Diagnostic Techniques
+- Residual Analysis
+- Q-Q Plots
+- Hypothesis-Based Assumption Tests
+
+### Key Questions
+- What happens when assumptions are violated?
+- Which alternative methods can be used?
+
+---
+
+## 16. Effect Size and Practical Significance
+
+### Effect Size Measures
+- Cohen's d
+- Odds Ratio
+- Relative Risk
+- Eta Squared (η²)
+- Partial Eta Squared
+
+### Key Concepts
+- Statistical Significance
+- Practical Significance
+- Magnitude of Effects
+
+### Key Questions
+- Why should effect size accompany p-values?
+
+---
+
+## 17. Interpretation and Statistical Thinking
+
+### Interpretation Skills
+- Correct Interpretation of p-Values
+- Confidence Interval Interpretation
+- Hypothesis Test Interpretation
+
+### Common Misconceptions
+- Misinterpreting p-values
+- Confusing Correlation with Causation
+- Overreliance on Statistical Significance
+
+### Biases and Pitfalls
+- Sampling Bias
+- Selection Bias
+- Survivorship Bias
+- Measurement Bias
+
+### Core Trade-Offs
+- Bias vs Variance
+- Type I vs Type II Errors
+- Power vs Significance Level
+
+### Expected Outcome
+A practitioner should be able to:
+- Select the appropriate inferential technique.
+- Validate assumptions.
+- Interpret results correctly.
+- Communicate uncertainty effectively.
+- Distinguish statistical significance from business significance.

@@ -22,7 +22,7 @@ def load_settings() -> Settings:
 
     model_name = os.getenv("MODEL_NAME", "openai:gpt-5-mini")
     db_path = Path(os.getenv("DB_PATH", "Chinook.db")).expanduser().resolve()
-    project_name = os.getenv("LANGSMITH_PROJECT", "sqlagentsystem")
+    project_name = os.getenv("LANGSMITH_PROJECT", "project")
 
     # Keep user-provided endpoint/keys untouched; only mirror required vars.
     langsmith_endpoint = os.getenv("LANGSMITH_ENDPOINT")

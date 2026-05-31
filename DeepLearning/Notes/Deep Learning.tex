@@ -303,6 +303,46 @@ Effect: regularization, reduced co-adaptation, better generalization.
     \item Encourages distributed responsibility across many units.
 \end{itemize}
 
+
+\subsection{ReLu Activation}
+
+$$ \text{ReLU: } f(x) = \max(0, x)$$
+
+\[
+f'(x) =
+\begin{cases}
+0 & x < 0 \\
+1 & x > 0
+\end{cases}
+\]
+
+ReLU passes positive activations unchanged and suppresses negative activations to zero, introducing non-linearity and sparsity in neural representations.
+
+\begin{itemize}
+
+\item \textbf{Vanishing gradient problem:} mitigated compared to sigmoid/tanh since $f'(x)=1$ for $x>0$, preventing repeated shrinkage of gradients across layers.
+
+\item \textbf{Exploding activations:} possible because outputs are unbounded for $x>0$, leading to large forward and backward signal magnitudes in deep networks.
+
+\item \textbf{Dying ReLU problem:} if $z = Wx + b < 0$ for all inputs, then $f(z)=0$ and $f'(z)=0$, causing neurons to stop learning permanently.
+
+\item \textbf{Sparsity:} ReLU outputs exact zeros for negative inputs, producing sparse activations and efficient representations.
+
+\item \textbf{Unbounded positive outputs:} $f(x)$ grows linearly for $x>0$, which can lead to unstable activations without normalization.
+
+\item \textbf{Instability across layers:} repeated application can cause variance shift if weights are not properly scaled.
+
+\end{itemize}
+
+For ReLU, approximately half activations are zero:
+
+He initialization compensates this effect: $\mathrm{Var}(W) = \frac{2}{n_{\text{in}}}$
+
+ensuring stable variance across layers:$\mathrm{Var}(z) \approx 1$
+
+
+
+
 \section{Sequential Architectures}
 
 \subsection{RNN}
@@ -756,5 +796,14 @@ F1_{\text{LCS}} =
     \item Captures in-order matching (not necessarily contiguous)
     \item Rewards fluency and structure better than pure n-grams
 \end{itemize}
+
+
+
+
+
+
+
+
+
 
 \end{document}

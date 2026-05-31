@@ -1,0 +1,13 @@
+[project]
+name = "machine-learning"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "jupyter>=1.1.1",
+    "notebook>=7.5.6",
+    "pandas>=3.0.3",
+    "pyspark>=4.1.2",
+    "scikit-learn>=1.8.0",
+]

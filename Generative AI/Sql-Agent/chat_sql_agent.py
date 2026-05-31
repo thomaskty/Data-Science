@@ -81,7 +81,7 @@ async def run_chat() -> None:
     mcp_tools = await load_mcp_tools(files_root=Path.cwd())
     memory = MemoryManager(
         max_messages=50,
-        memory_file=Path.cwd() / "sqlagentsystem" / "data" / "memory.jsonl",
+        memory_file=Path.cwd() / "memory" / "data" / "memory.jsonl",
     )
 
     agent = create_agent(

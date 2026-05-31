@@ -25,7 +25,7 @@ Use your existing project virtualenv and environment variables:
 From project root:
 
 ```bash
-.venv/bin/python -m sqlagentsystem.chat_sql_agent
+.venv/bin/python -m Sql-Agent.chat_sql_agent
 ```
 
 ## Notes
